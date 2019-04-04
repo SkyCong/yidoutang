@@ -11,16 +11,16 @@ export default class CategoriesHeader extends Component {
     this.handleSwich = this.handleSwich.bind(this)
 
     this.state = {
-      dir: 'left',
-      delayDir: 'left'
+      dir: 'right',
+      delayDir: 'right'
     }
   }
   render() {
     return (
       <TableList>
         <BorderedNav dir={this.state.dir} delayDir={this.state.delayDir}>
-          <div onClick={() => this.handleSwich('left')}>分类</div>
-          <div onClick={() => this.handleSwich('right')}>食材</div>
+          <div onClick={() => this.handleSwich('left')}>关注</div>
+          <div onClick={() => this.handleSwich('right')}>发现</div>
         </BorderedNav>
       </TableList>
     )

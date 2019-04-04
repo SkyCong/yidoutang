@@ -10,7 +10,13 @@ export default props => (
   <SwiperContainer>
     {
       props.isLoaded ? (
-        <Carousel>
+        <Carousel  
+          className="space-carousel"
+            cellSpacing={10}
+            slideWidth={0.9}
+            autoplay
+            infinite
+        >
           {
             props.list.map(value => (
               <img key={value.id} src={value.img} alt={value.name}/>

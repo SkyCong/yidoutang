@@ -65,7 +65,7 @@ const Header = Styled.header `
   
 `
 const TableList = Styled.header `
-height: .64rem;
+height: .43rem;
 background: #00ff66;
 display: flex;
 justify-content: center;

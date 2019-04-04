@@ -3,22 +3,22 @@ import React from 'react'
 import { TabBar } from 'antd-mobile';
 
 import Index from './index/Index'
-import Categories from './categories/Categories'
+import Look from './look/Look'
 
-import cookbook from 'assets/images/cookbook.png'
-import cookbookActive from 'assets/images/cookbook-active.png'
-import menu from 'assets/images/menu.png'
-import menuActive from 'assets/images/menu-active.png'
-import location from 'assets/images/location.png'
-import locationActive from 'assets/images/location-active.png'
-import more from 'assets/images/more.png'
-import moreActive from 'assets/images/more-active.png'
+import index from 'assets/images/icon/index.png'
+import indexActive from 'assets/images/icon/index-active.png'
+import look from 'assets/images/icon/look.png'
+import lookActive from 'assets/images/icon/look-active.png'
+import renovation from 'assets/images/icon/renovation.png'
+import renovationActive from 'assets/images/icon/renovation-active.png'
+import my from 'assets/images/icon/my.png'
+import myActive from 'assets/images/icon/my-active.png'
 
 export default class HomeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'cookbook',
+      selectedTab: 'index',
       hidden: false,
       fullScreen: true,
     };
@@ -34,24 +34,24 @@ export default class HomeList extends React.Component {
           hidden={this.state.hidden}
         >
           <TabBar.Item
-            title="菜谱大全"
-            key="cookbook"
+            title="首页"
+            key="index"
             icon={<div style={{
               width: '22px',
               height: '22px',
-              background: `url(${cookbook}) center center /  25px 25px no-repeat` }}
+              background: `url(${index}) center center /  21px 21px no-repeat` }}
             />
             }
             selectedIcon={<div style={{
               width: '22px',
               height: '22px',
-              background: `url(${cookbookActive}) center center /  25px 25px no-repeat` }}
+              background: `url(${indexActive}) center center /  21px 21px no-repeat` }}
             />
             }
-            selected={this.state.selectedTab === 'cookbook'}
+            selected={this.state.selectedTab === 'index'}
             onPress={() => {
               this.setState({
-                selectedTab: 'cookbook',
+                selectedTab: 'index',
               });
             }}
             data-seed="logId"
@@ -69,45 +69,45 @@ export default class HomeList extends React.Component {
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: `url(${menu}) center center /  21px 21px no-repeat` }}
+                background: `url(${look}) center center /  18px 18px no-repeat` }}
               />
             }
             selectedIcon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: `url(${menuActive}) center center /  21px 21px no-repeat` }}
+                background: `url(${lookActive}) center center /  18px 18px no-repeat` }}
               />
             }
-            title="分类"
-            key="category"
-            selected={this.state.selectedTab === 'category'}
+            title="看图"
+            key="look"
+            selected={this.state.selectedTab === 'look'}
             onPress={() => {
               this.setState({
-                selectedTab: 'category',
+                selectedTab: 'look',
               });
             }}
             data-seed="logId1"
           >
-            <Categories></Categories>
+            <Look></Look>
           </TabBar.Item>
           <TabBar.Item
             icon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: `url(${location}) center center /  21px 21px no-repeat` }}
+                background: `url(${renovation}) center center /  21px 21px no-repeat` }}
               />
             }
             selectedIcon={
               <div style={{
                 width: '22px',
                 height: '22px',
-                background: `url(${locationActive}) center center /  21px 21px no-repeat` }}
+                background: `url(${renovationActive}) center center /  21px 21px no-repeat` }}
               />
             }
-            title="地图"
-            key="map"
+            title="装修"
+            key="renovation"
             selected={this.state.selectedTab === 'map'}
             onPress={() => {
               this.setState({
@@ -115,13 +115,13 @@ export default class HomeList extends React.Component {
               });
             }}
           >
-            <div>地图</div>
+            <div>装修</div>
           </TabBar.Item>
           <TabBar.Item
-            icon={{ uri: more }}
-            selectedIcon={{ uri: moreActive }}
-            title="更多"
-            key="more"
+            icon={{ uri: my }}
+            selectedIcon={{ uri: myActive }}
+            title="我"
+            key="my"
             selected={this.state.selectedTab === 'more'}
             onPress={() => {
               this.setState({
@@ -129,7 +129,7 @@ export default class HomeList extends React.Component {
               });
             }}
           >
-            <div>dd</div>
+            <div>我</div>
           </TabBar.Item>
         </TabBar>
       </div>
