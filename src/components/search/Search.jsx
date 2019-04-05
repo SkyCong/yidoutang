@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import SearchIcon from 'assets/images/search.png'
+import SearchIcon from 'assets/images/icon/search.png'
+import MessageIcon from 'assets/images/icon/message.png'
+
 
 import { 
   BorderedInputContainer,
@@ -15,8 +17,9 @@ export default class Search extends Component {
       <SearchContainer>
         <TempComp { ...this.props }>
           <img src={SearchIcon} alt="searchicon"/>
-          <span>想吃什么搜这里，比如川菜</span>
+          <input type="text" placeholder="卫生间"/>
         </TempComp>
+        {/* <img src={MessageIcon} alt="messageIcon"/> */}
       </SearchContainer>
     )
   }

@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 
 import {
-  CookBookContainer,
+  IndexContainer,
   Header
 } from './IndexStyled'
 
@@ -28,11 +28,12 @@ class Index extends Component {
 
   render() {
     return (
-      <CookBookContainer>
+      <IndexContainer>
         <Header>          
           <Search
-            hasborder={true}
+            hasborder={false}
             bgcolor="#fff"
+            radius={30}
           ></Search>
         </Header>
         <IndexHeader onSwitch={this.handleSwitch}></IndexHeader>
@@ -44,7 +45,7 @@ class Index extends Component {
           <Route path='/index/find' component={IndexFind}/>
           <Route path='/index/follow' component={IndexFollow}/>
         </Switch>
-      </CookBookContainer>
+      </IndexContainer>
     )
   }
 

@@ -1,13 +1,17 @@
 import Styled from 'styled-components'
 import border from 'components/styled/border'
 
-const CategoriesContainer = Styled.div `
+const IndexContainer = Styled.div `
   display: flex;
   flex-direction: column;
+  main {
+    flex: 1;
+    overflow-y: scroll;
+  }
 `
 
 const Nav = Styled.nav `
-  width: 1.43rem;
+  width: 3rem;
   height: .3rem;
   display: flex;
   justify-content: center;
@@ -31,10 +35,10 @@ const Nav = Styled.nav `
     position: relative;
     z-index: 2;
     &:first-child {
-      color: ${ props => props.delayDir === 'left' ? '#ee7530;' : '#fff'};
+      color: ${ props => props.delayDir === 'left' ? '#2c2c2c;' : '#b5b7bd'};
     }
     &:last-child {
-      color: ${ props => props.delayDir === 'right' ? '#ee7530;' : '#fff'};
+      color: ${ props => props.delayDir === 'right' ? '#2c2c2c;' : '#b5b7bd'};
     }
   }
 `
@@ -45,28 +49,19 @@ const BorderedNav = border({
   radius: 15
 })
 
-const CookBookContainer = Styled.div `
-  display: flex;
-  flex-direction: column;
-  main {
-    flex: 1;
-    overflow-y: scroll;
-  }
-`
 
 const Header = Styled.header `
   height: .64rem;
-  background: #ee7530;
+  background: #ffda46;
   text-align: center;
   line-height: .64rem;
   font-size: .18rem;
-  color: #fff;
   font-weight: 100;
   
 `
 const TableList = Styled.header `
 height: .43rem;
-background: #00ff66;
+background: #ffffff;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -74,9 +69,8 @@ align-items: center;
 `
 
 export {
-  CategoriesContainer,
+  IndexContainer,
   Header,
   BorderedNav,
-  CookBookContainer,
   TableList
 }
