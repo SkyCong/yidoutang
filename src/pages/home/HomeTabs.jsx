@@ -57,11 +57,7 @@ export default class HomeList extends React.Component {
             data-seed="logId"
           >
 
-
-
             <Index></Index>
-
-
 
           </TabBar.Item>
           <TabBar.Item

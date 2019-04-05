@@ -12,7 +12,6 @@ import {
   Header
 } from './IndexStyled'
 
-import Swiper from './swiper/views/Swiper'
 import Search from 'components/search/Search'
 import IndexHeader from '../index/IndexHeader'
 
@@ -37,9 +36,7 @@ class Index extends Component {
           ></Search>
         </Header>
         <IndexHeader onSwitch={this.handleSwitch}></IndexHeader>
-        <main>
-          <Swiper></Swiper>
-        </main>
+
         <Switch>
           <Redirect exact from='/' to='/index/find' />
           <Route path='/index/find' component={IndexFind}/>

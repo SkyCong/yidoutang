@@ -1,5 +1,4 @@
 import Styled from 'styled-components'
-import border from 'components/styled/border'
 
 const IndexContainer = Styled.div `
   display: flex;
@@ -10,7 +9,7 @@ const IndexContainer = Styled.div `
   }
 `
 
-const Nav = Styled.nav `
+const BorderedNav = Styled.nav `
   width: 3rem;
   height: .3rem;
   display: flex;
@@ -43,12 +42,6 @@ const Nav = Styled.nav `
   }
 `
 
-const BorderedNav = border({
-  component: Nav,
-  color: '#fff',
-  radius: 15
-})
-
 
 const Header = Styled.header `
   height: .64rem;
@@ -57,14 +50,17 @@ const Header = Styled.header `
   line-height: .64rem;
   font-size: .18rem;
   font-weight: 100;
-  
+
 `
+
+
 const TableList = Styled.header `
-height: .43rem;
-background: #ffffff;
-display: flex;
-justify-content: center;
-align-items: center;
+  height: .43rem;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #e6e6e6;
   
 `
 

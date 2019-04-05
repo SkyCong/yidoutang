@@ -16,8 +16,9 @@ export const setIsLoaded = isLoaded => ({
 
 export const getListAsync = () => {
   return async dispatch => {
-    let result = await http.get('/api/list')
-    dispatch(getListSync(result.data.slice(0, 3)))
+    let result = await http.get('/api/page')
+    console.log(result.data)
+    dispatch(getListSync(result.data))
     dispatch(setIsLoaded(true))
   }
 }

@@ -3,15 +3,24 @@ import Styled from 'styled-components'
 import border from 'components/styled/border'
 
 const SearchContainer = Styled.div `
-  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;  
   top: .26rem;
   left: .2rem;
   height: .31rem;
-
+  width: 92%;
+  img {
+    width: .24rem;
+    height: .24rem;
+    margin-left: 2%;
+  }
 `
 
 const InputContainer = Styled.div `
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -35,6 +44,10 @@ const InputContainer = Styled.div `
     outline: none;
     font-weight: 400;
   }
+  input::-webkit-input-placeholder {
+    color: #999;
+  }
+
 `
 
 const BorderedInputContainer = border({

@@ -12,14 +12,14 @@ export default props => (
       props.isLoaded ? (
         <Carousel  
           className="space-carousel"
-            cellSpacing={10}
-            slideWidth={0.9}
-            autoplay
+            cellSpacing={9}
+            slideWidth={0.88}
+            // autoplay
             infinite
         >
           {
-            props.list.map(value => (
-              <img key={value.id} src={value.img} alt={value.name}/>
+            props.list.banner.map(value => (
+              <img key={value.banner_id} src={value.image} alt={value.title}/>
             ))
           }
         </Carousel>

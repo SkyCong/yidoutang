@@ -19,7 +19,7 @@ export default class Search extends Component {
           <img src={SearchIcon} alt="searchicon"/>
           <input type="text" placeholder="卫生间"/>
         </TempComp>
-        {/* <img src={MessageIcon} alt="messageIcon"/> */}
+        <img src={MessageIcon} alt="messageIcon"/>
       </SearchContainer>
     )
   }
