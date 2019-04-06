@@ -1,6 +1,6 @@
 import Styled from 'styled-components'
 
-const RecommendContainer = Styled.div `
+const ReCommendContainer = Styled.div `
   height: 2.79rem;
   background: #fff;
   padding-bottom: .08rem;
@@ -21,12 +21,16 @@ const RecommendContainer = Styled.div `
       margin-top: .05rem;
     }
   }
+  img{
+    width: .5rem;
+    height: .5rem;
+  }
 `
 const ReCommendUIContainer = Styled.div `
 
 
 `
 export {
-  RecommendContainer,
+  ReCommendContainer,
   ReCommendUIContainer
 }

@@ -4,6 +4,9 @@ import { TabBar } from 'antd-mobile';
 
 import Index from './index/Index'
 import Look from './look/Look'
+import Renovation from './renovation/Renovation'
+import My from './my/My'
+
 
 import index from 'assets/images/icon/index.png'
 import indexActive from 'assets/images/icon/index-active.png'
@@ -14,7 +17,12 @@ import renovationActive from 'assets/images/icon/renovation-active.png'
 import my from 'assets/images/icon/my.png'
 import myActive from 'assets/images/icon/my-active.png'
 
-export default class HomeList extends React.Component {
+import {
+  withRouter
+} from 'react-router-dom'
+
+
+class HomeList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,6 +61,7 @@ export default class HomeList extends React.Component {
               this.setState({
                 selectedTab: 'index',
               });
+              this.props.history.push('/')
             }}
             data-seed="logId"
           >
@@ -60,6 +69,7 @@ export default class HomeList extends React.Component {
             <Index></Index>
 
           </TabBar.Item>
+
           <TabBar.Item
             icon={
               <div style={{
@@ -82,6 +92,7 @@ export default class HomeList extends React.Component {
               this.setState({
                 selectedTab: 'look',
               });
+              this.props.history.push('/look')
             }}
             data-seed="logId1"
           >
@@ -104,31 +115,35 @@ export default class HomeList extends React.Component {
             }
             title="装修"
             key="renovation"
-            selected={this.state.selectedTab === 'map'}
+            selected={this.state.selectedTab === 'renovation'}
             onPress={() => {
               this.setState({
-                selectedTab: 'map',
+                selectedTab: 'renovation',
               });
+              this.props.history.push('/renovation')
             }}
           >
-            <div>装修</div>
+            <Renovation></Renovation>
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: my }}
             selectedIcon={{ uri: myActive }}
             title="我"
             key="my"
-            selected={this.state.selectedTab === 'more'}
+            selected={this.state.selectedTab === 'my'}
             onPress={() => {
               this.setState({
-                selectedTab: 'more',
+                selectedTab: 'my',
               });
+              this.props.history.push('/my')
             }}
           >
-            <div>我</div>
+            <My></My>
           </TabBar.Item>
-        </TabBar>
+        </TabBar> 
       </div>
     );
   }
 }
+
+export default withRouter(HomeList)

@@ -7,6 +7,7 @@ import {
 import { Carousel, ActivityIndicator } from 'antd-mobile';
 
 export default props => (
+
   <SwiperContainer>
     {
       props.isLoaded ? (

@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import {
-  RecommendContainer
+  ReCommendContainer
 } from './ReCommendStyled'
 
 import {
   getFollowAsync
 } from '../actionCreator'
 
-import RecommendUI from './ReCommendUI'
+import ReCommendUI from './ReCommendUI'
 
 
 const mapState = state => ({
-  list: state.follow.follow.masters
+  follow: state.follow.follow
 })
 
 const mapDispatch = dispatch => ({
@@ -30,15 +30,21 @@ class ReCommend extends Component {
   }
 
   render() {
-    let filteredReComm = this.props.categories 
-
+    // let filteredReComm = this.props.categories 
+    console.log(this.props.follow.masters)
+    let aaa = this.props.follow.masters || []
     return (
       <ReCommendContainer>
         <h3>
           达人推荐
-          <span>换一批<span>
+          <span>换一批</span>
         </h3>
-        <ReCommendUI { ...this.props } />
+        {
+          aaa.map(value => (
+            <img key={value.user_id} src={value.user_pic} alt={value.user_name}/>
+          ))          
+        }
+
       </ReCommendContainer>
     )
   }
@@ -49,4 +55,4 @@ class ReCommend extends Component {
 
 }
 
-export default connect(mapState, mapDispatch)(HotCategories)
+export default connect(mapState, mapDispatch)(ReCommend)

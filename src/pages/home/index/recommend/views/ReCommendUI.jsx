@@ -7,9 +7,9 @@ import {
 
 export default props => (
   <ReCommendUIContainer>
-    {
-      props.list.map(value => (
-        <img key={value.id} src={value.img} alt={value.name}/>
+    {/* {props.follow.from_title} */
+      props.follow.masters.map(value => (
+        <img key={value.user_id} src={value.user_pic} alt={value.user_name}/>
       ))
     }
   </ReCommendUIContainer>

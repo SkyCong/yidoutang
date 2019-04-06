@@ -22,6 +22,7 @@ const mapDispatch = dispatch => ({
 })
 
 class Swiper extends Component {
+
   constructor(props) {
     super(props)
     this.fetchData()
