@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import BScroll from 'better-scroll'
+
 import {
   ReCommendContainer
 } from './ReCommendStyled'
@@ -9,7 +11,7 @@ import {
   getFollowAsync
 } from '../actionCreator'
 
-import ReCommendUI from './ReCommendUI'
+// import ReCommendUI from './ReCommendUI'
 
 
 const mapState = state => ({
@@ -30,27 +32,48 @@ class ReCommend extends Component {
   }
 
   render() {
-    // let filteredReComm = this.props.categories 
     console.log(this.props.follow.masters)
-    let aaa = this.props.follow.masters || []
+    let ajaxData = this.props.follow.masters || []
     return (
       <ReCommendContainer>
         <h3>
           达人推荐
           <span>换一批</span>
         </h3>
-        {
-          aaa.map(value => (
-            <img key={value.user_id} src={value.user_pic} alt={value.user_name}/>
-          ))          
-        }
-
+  
+        <div className="follow_scroll">
+          <ul> 
+            {
+              ajaxData.map(value => (
+                <li key={value.user_id}>
+                  <img src={value.user_pic} alt={value.user_name}/>
+                  <p>
+                    {value.user_name}
+                    <img src={value.badge_logo}/>
+                  </p>
+                  <span>获得{value.follower_num}次收藏</span>
+                  <div><b>+</b>关注</div>
+                </li>
+              ))  
+            }
+          </ul>
+        </div>
       </ReCommendContainer>
     )
   }
 
   fetchData() {
     this.props.fetchData()
+  }
+
+  componentDidMount() {
+    new BScroll('.follow_scroll', {
+      startX:0,
+      click:true,
+      scrollX:true,
+      scrollY:false,
+      eventPassthrough:'vertical'
+    })
   }
 
 }
