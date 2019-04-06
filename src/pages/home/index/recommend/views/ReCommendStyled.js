@@ -3,11 +3,11 @@ import Styled from 'styled-components'
 const ReCommendContainer = Styled.div `
   height: 2.79rem;
   background: #fff;
-  padding-bottom: .08rem;
+  margin-bottom: .08rem;
   h3{
     color: #333;
     font-size: .16rem;
-    margin: .2rem 0;
+    margin: .15rem 0;
     padding: 0 .2rem;
     overflow: hidden;
     font-family: inherit;

@@ -49,7 +49,7 @@ class ReCommend extends Component {
                   <img src={value.user_pic} alt={value.user_name}/>
                   <p>
                     {value.user_name}
-                    <img src={value.badge_logo}/>
+                    <img src={value.badge_logo} alt="dj"/>
                   </p>
                   <span>获得{value.follower_num}次收藏</span>
                   <div><b>+</b>关注</div>
