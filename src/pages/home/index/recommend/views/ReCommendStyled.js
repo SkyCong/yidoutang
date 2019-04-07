@@ -72,13 +72,12 @@ const ReCommendContainer = Styled.div `
           border-radius: 2.5px;
           background:#ffda46;
         }
-
-        
       }
     }
   }
 
 `
+
 const ReCommendUIContainer = Styled.div `
 
 

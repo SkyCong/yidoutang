@@ -40,7 +40,6 @@ class ReCommend extends Component {
           达人推荐
           <span>换一批</span>
         </h3>
-  
         <div className="follow_scroll">
           <ul> 
             {

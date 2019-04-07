@@ -13,7 +13,8 @@ import {
   RenoContainer,
   Header,
   Nav,
-  Process
+  Process,
+  Questions
 } from './RenoStyled'
 
 import Search from 'components/search/Search'
@@ -33,6 +34,7 @@ class Renovation extends Component {
     console.log(this.state.reno.process)
     let navData = this.state.reno.nav || []
     let processData = this.state.reno.process || []
+    let questionsData = this.state.reno.questions || []
 
     return (
       <RenoContainer>
@@ -53,28 +55,47 @@ class Renovation extends Component {
             ))  
           }
         </Nav> 
+
         <Process>
           {
-            processData.map(value => (
-              <div key={value.title}>
+            processData.map((value,index) => (
+              <div key={index}>
                 <h3>{value.title}</h3>
-                {/* <div>
+                <ul>
                   {
-                    value.sontags.map(value => (     
-                      <ul key={value.title}>
-                        <li>
-                          <img>{value.icon}</img>
-                          <p>{value.title}</p>
-                        </li>
-                      </ul>
-                    ))                   
+                    value.sontags.map(values => (     
+                      <li key={values.title}>
+                        <img src={values.icon} alt={values.title}/>
+                        <p>{values.title}</p>
+                      </li>
+                    ))                     
                   }
-                </div> */}
-
+                </ul>
               </div>  
             ))  
           }
-        </Process>       
+        </Process>
+
+        <Questions>
+          {
+            questionsData.map((value,index) => (
+              <div key={index}>
+                <h3>{value.title}</h3>
+                <ul>
+                  {
+                    value.sontags.map(values => (     
+                      <li key={values.title}>
+                        <img src={values.icon} alt={values.title}/>
+                        <p>{values.title}</p>
+                      </li>
+                    ))                     
+                  }
+                </ul>
+              </div>  
+            ))  
+          }
+        </Questions> 
+
       </RenoContainer>
     )
   }
