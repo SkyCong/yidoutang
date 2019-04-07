@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+import BScroll from 'better-scroll'
+
 import {
-  NavListContainer,
-  Wrapper,
-  Item
+  NavListContainer
 } from './NavListStyled'
 
 const mapState = state => ({
@@ -14,29 +14,37 @@ const mapState = state => ({
 class NavList extends Component {
 
   render() {
+    let navData = this.props.list.nav || []
+
     return (
-      <NavListContainer>
-        <Wrapper>
-          
-            {/* // this.props.list.map(value => (
-            //   <Item>
-            //     <img key={value.type} src={value.icon} alt={value.title}/>
-            //     {value.title}
-            //   </Item>
-            // ))   */}
-            <Item>q</Item>   
-            <Item>q</Item>    
-            <Item>q</Item>    
-            <Item>3</Item>    
-            <Item>4</Item>    
-            <Item>5</Item>    
-            <Item>6</Item>    
- 
-          
-        </Wrapper>
+      <NavListContainer className="nav_scroll">
+        <ul>
+          {
+            navData.map(value => (
+              <li key={value.title}>
+                <img src={value.icon} alt={value.title}/>
+                {value.title}
+              </li>
+            ))   
+          }              
+        </ul>  
+        <div></div>
       </NavListContainer>
     )
   }
+
+  componentDidMount() {
+    console.log(0)
+    new BScroll('.nav_scroll', {
+      startX:0,
+      click:true,
+      scrollX:true,
+      scrollY:false,
+      eventPassthrough:'vertical'
+    })
+  }
+
+  
 }
 
 export default connect(mapState)(NavList)

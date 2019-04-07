@@ -99,7 +99,7 @@ class Renovation extends Component {
                           <p>
                             {
                               value.participants.map((values,index) => (  
-                                <img src={values} alt={'icon'}/> 
+                                <img src={values} alt={'icon'} key={index}/> 
                               ))  
                             }
                             <span>他们正在参加</span>
@@ -115,7 +115,7 @@ class Renovation extends Component {
               <ul>
                 {
                   activitysData.map(value => (
-                    <li ker={value.title}>
+                    <li key={value.title}>
                       <img src={value.cover} alt={value.title}/> 
                       <b>{value.title}</b>
                     </li>

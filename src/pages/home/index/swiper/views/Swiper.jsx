@@ -38,6 +38,10 @@ class Swiper extends Component {
     this.props.fetchData()
     this.props.initIsLoaded()
   }
+
+  componentDidMount() {
+    this.props.fetchData()
+  }
 }
 
 export default connect(mapState, mapDispatch)(Swiper)

@@ -14,6 +14,7 @@ export default class CategoriesHeader extends Component {
       dir: 'right',
       delayDir: 'right'
     }
+
   }
   render() {
     return (

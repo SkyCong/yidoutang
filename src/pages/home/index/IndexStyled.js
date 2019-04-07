@@ -19,13 +19,14 @@ const BorderedNav = Styled.nav `
   &::before {
     content: '';
     position: absolute;
-    width: 50%;
-    height: 100%;
-    border-radius: 15px;
-    background: #fff;
-    left: ${ props => props.dir === 'left' ? 0 : '50%'};
+    top: .28rem;
+    width: .22rem;
+    height: .03rem;
+    border-radius: 2px;
+    background: #ffda46;
+    left: ${ props => props.dir === 'left' ? '21.6%' : '71.6%'};
     z-index: 1;
-    transition: all 300ms ease-in;
+    transition: all 150ms ease-in;
   }
   div {
     width: 50%;
@@ -35,9 +36,11 @@ const BorderedNav = Styled.nav `
     z-index: 2;
     &:first-child {
       color: ${ props => props.delayDir === 'left' ? '#2c2c2c;' : '#b5b7bd'};
+      font-weight: ${ props => props.delayDir === 'left' ? 'bold;' : 'normal;'};
     }
     &:last-child {
       color: ${ props => props.delayDir === 'right' ? '#2c2c2c;' : '#b5b7bd'};
+      font-weight: ${ props => props.delayDir === 'right' ? 'bold;' : 'normal;'};
     }
   }
 `

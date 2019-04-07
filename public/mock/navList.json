@@ -1,0 +1,443 @@
+{
+    "data": {
+        "tags": [
+            {
+                "name": "空间",
+                "key": "space",
+                "group": true,
+                "groups": [
+                    {
+                        "name": "空间",
+                        "sonTags": [
+                            {
+                                "title": "客厅",
+                                "value": "客厅"
+                            },
+                            {
+                                "title": "餐厅",
+                                "value": "餐厅"
+                            },
+                            {
+                                "title": "卧室",
+                                "value": "卧室"
+                            },
+                            {
+                                "title": "玄关",
+                                "value": "玄关"
+                            },
+                            {
+                                "title": "儿童房",
+                                "value": "儿童房"
+                            },
+                            {
+                                "title": "厨房",
+                                "value": "厨房"
+                            },
+                            {
+                                "title": "工作区",
+                                "value": "工作区"
+                            },
+                            {
+                                "title": "阳台",
+                                "value": "阳台"
+                            },
+                            {
+                                "title": "衣帽间",
+                                "value": "衣帽间"
+                            },
+                            {
+                                "title": "楼梯",
+                                "value": "楼梯"
+                            },
+                            {
+                                "title": "走廊",
+                                "value": "走廊"
+                            },
+                            {
+                                "title": "卫生间",
+                                "value": "卫生间"
+                            },
+                            {
+                                "title": "书房",
+                                "value": "书房"
+                            },
+                            {
+                                "title": "开放式厨房",
+                                "value": "开放式厨房"
+                            },
+                            {
+                                "title": "阁楼",
+                                "value": "阁楼"
+                            },
+                            {
+                                "title": "花园",
+                                "value": "花园"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "户型",
+                        "sonTags": [
+                            {
+                                "title": "小户型",
+                                "value": "小户型"
+                            },
+                            {
+                                "title": "复式",
+                                "value": "复式"
+                            },
+                            {
+                                "title": "别墅",
+                                "value": "别墅"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "风格",
+                "key": "style",
+                "group": true,
+                "groups": [
+                    {
+                        "name": "风格",
+                        "sonTags": [
+                            {
+                                "title": "北欧",
+                                "value": "北欧"
+                            },
+                            {
+                                "title": "日式",
+                                "value": "日式"
+                            },
+                            {
+                                "title": "美式",
+                                "value": "美式"
+                            },
+                            {
+                                "title": "中式",
+                                "value": "中式"
+                            },
+                            {
+                                "title": "法式",
+                                "value": "法式"
+                            },
+                            {
+                                "title": "工业风",
+                                "value": "工业风"
+                            },
+                            {
+                                "title": "简约",
+                                "value": "简约"
+                            },
+                            {
+                                "title": "田园",
+                                "value": "田园"
+                            },
+                            {
+                                "title": "乡村",
+                                "value": "乡村"
+                            },
+                            {
+                                "title": "复古",
+                                "value": "复古"
+                            },
+                            {
+                                "title": "新中式",
+                                "value": "新中式"
+                            },
+                            {
+                                "title": "欧式",
+                                "value": "欧式"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "硬装",
+                "key": "part",
+                "group": true,
+                "groups": [
+                    {
+                        "name": "局部",
+                        "sonTags": [
+                            {
+                                "title": "电视墙",
+                                "value": "电视墙"
+                            },
+                            {
+                                "title": "背景墙",
+                                "value": "背景墙"
+                            },
+                            {
+                                "title": "吧台",
+                                "value": "吧台"
+                            },
+                            {
+                                "title": "飘窗",
+                                "value": "飘窗"
+                            },
+                            {
+                                "title": "隔断",
+                                "value": "隔断"
+                            },
+                            {
+                                "title": "卡座",
+                                "value": "卡座"
+                            },
+                            {
+                                "title": "干湿分离",
+                                "value": "干湿分离"
+                            },
+                            {
+                                "title": "榻榻米",
+                                "value": "榻榻米"
+                            },
+                            {
+                                "title": "黑板墙",
+                                "value": "黑板墙"
+                            },
+                            {
+                                "title": "壁炉",
+                                "value": "壁炉"
+                            },
+                            {
+                                "title": "浴缸",
+                                "value": "浴缸"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "硬装",
+                        "sonTags": [
+                            {
+                                "title": "吊顶",
+                                "value": "吊顶"
+                            },
+                            {
+                                "title": "壁纸",
+                                "value": "壁纸"
+                            },
+                            {
+                                "title": "墙砖",
+                                "value": "墙砖"
+                            },
+                            {
+                                "title": "墙漆",
+                                "value": "墙漆"
+                            },
+                            {
+                                "title": "地砖",
+                                "value": "地砖"
+                            },
+                            {
+                                "title": "地板",
+                                "value": "地板"
+                            },
+                            {
+                                "title": "门",
+                                "value": "门"
+                            },
+                            {
+                                "title": "推拉门",
+                                "value": "推拉门"
+                            },
+                            {
+                                "title": "窗",
+                                "value": "窗"
+                            },
+                            {
+                                "title": "隐形门",
+                                "value": "隐形门"
+                            },
+                            {
+                                "title": "谷仓门",
+                                "value": "谷仓门"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "软装",
+                "key": "soft",
+                "group": true,
+                "groups": [
+                    {
+                        "name": "家具",
+                        "sonTags": [
+                            {
+                                "title": "沙发",
+                                "value": "沙发"
+                            },
+                            {
+                                "title": "电视柜",
+                                "value": "电视柜"
+                            },
+                            {
+                                "title": "茶几",
+                                "value": "茶几"
+                            },
+                            {
+                                "title": "餐桌",
+                                "value": "餐桌"
+                            },
+                            {
+                                "title": "餐边柜",
+                                "value": "餐边柜"
+                            },
+                            {
+                                "title": "书桌",
+                                "value": "书桌"
+                            },
+                            {
+                                "title": "书柜",
+                                "value": "书柜"
+                            },
+                            {
+                                "title": "床",
+                                "value": "床"
+                            },
+                            {
+                                "title": "衣柜",
+                                "value": "衣柜"
+                            },
+                            {
+                                "title": "床头柜",
+                                "value": "床头柜"
+                            },
+                            {
+                                "title": "橱柜",
+                                "value": "橱柜"
+                            },
+                            {
+                                "title": "浴室柜",
+                                "value": "浴室柜"
+                            },
+                            {
+                                "title": "玄关柜",
+                                "value": "玄关柜"
+                            },
+                            {
+                                "title": "台灯",
+                                "value": "台灯"
+                            },
+                            {
+                                "title": "壁灯",
+                                "value": "壁灯"
+                            },
+                            {
+                                "title": "吊灯",
+                                "value": "吊灯"
+                            },
+                            {
+                                "title": "射灯",
+                                "value": "射灯"
+                            },
+                            {
+                                "title": "鞋柜",
+                                "value": "鞋柜"
+                            },
+                            {
+                                "title": "椅子",
+                                "value": "椅子"
+                            },
+                            {
+                                "title": "酒柜",
+                                "value": "酒柜"
+                            },
+                            {
+                                "title": "梳妆台",
+                                "value": "梳妆台"
+                            },
+                            {
+                                "title": "洞洞板",
+                                "value": "洞洞板"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "装饰",
+                        "sonTags": [
+                            {
+                                "title": "窗帘",
+                                "value": "窗帘"
+                            },
+                            {
+                                "title": "地毯",
+                                "value": "地毯"
+                            },
+                            {
+                                "title": "装饰画",
+                                "value": "装饰画"
+                            },
+                            {
+                                "title": "花瓶",
+                                "value": "花瓶"
+                            },
+                            {
+                                "title": "抱枕",
+                                "value": "抱枕"
+                            },
+                            {
+                                "title": "摆件",
+                                "value": "摆件"
+                            },
+                            {
+                                "title": "桌布",
+                                "value": "桌布"
+                            },
+                            {
+                                "title": "照片墙",
+                                "value": "照片墙"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "日常",
+                        "sonTags": [
+                            {
+                                "title": "收纳",
+                                "value": "收纳"
+                            },
+                            {
+                                "title": "绿植",
+                                "value": "绿植"
+                            },
+                            {
+                                "title": "插花",
+                                "value": "插花"
+                            },
+                            {
+                                "title": "家务",
+                                "value": "家务"
+                            },
+                            {
+                                "title": "宠物",
+                                "value": "宠物"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "排序",
+                "key": "order",
+                "group": false,
+                "sonTags": [
+                    {
+                        "value": "3",
+                        "title": "推荐"
+                    },
+                    {
+                        "value": "1",
+                        "title": "最新"
+                    }
+                ]
+            }
+        ]
+    },
+    "error": false,
+    "message": "success"
+}
