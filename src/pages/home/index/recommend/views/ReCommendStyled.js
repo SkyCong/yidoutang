@@ -1,7 +1,6 @@
 import Styled from 'styled-components'
 
 const ReCommendContainer = Styled.div `
-  height: 2.79rem;
   background: #fff;
   margin-bottom: .08rem;
   h3{
