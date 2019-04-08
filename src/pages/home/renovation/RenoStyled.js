@@ -12,13 +12,14 @@ const RenoContainer = Styled.div `
 `
 
 const Scorll = Styled.div `
+  background: #fff;
   padding: .64rem 0;
 `
 
 const Header = Styled.header `
+  background: #fff;
   width: 100%;
   height: .64rem;
-  background: #fff;
   text-align: center;
   line-height: .64rem;
   font-size: .18rem;
@@ -79,7 +80,6 @@ const Process = Styled.div `
 
 const Questions = Styled.div `
   padding-top: .2rem;
-
   h3{
     color: #333;
     font-size: .15rem;

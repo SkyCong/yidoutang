@@ -38,9 +38,6 @@ class Renovation extends Component {
     let processData = this.state.reno.process || []
     let questionsData = (this.state.reno.questions && this.state.reno.questions["list"]) || [] 
     let activitysData = this.state.reno.activitys || []
-
-    console.log(questionsData)
-
     return (
       <RenoContainer>
 

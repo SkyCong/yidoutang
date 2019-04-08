@@ -36,10 +36,9 @@ const InputContainer = Styled.div `
   input {
     font-size: .14rem;
     color: #999;
+    height: 100%;
     background: transparent;
     border: none;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     outline: none;
     font-weight: 400;

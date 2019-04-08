@@ -6,10 +6,6 @@ const LookContainer = Styled.div `
   display: flex;
   flex-direction: column;
   height: 100%;
-  main{
-    height: 100%;
-  }
-
 `
 
 const Scorll = Styled.div `
@@ -18,36 +14,66 @@ const Scorll = Styled.div `
 
 const Header = Styled.header `
   width: 100%;
-  height: .64rem;
+  height: 1.08rem;
+  position: fixed;
   background: #fff;
   text-align: center;
-  line-height: .64rem;
   font-size: .18rem;
   font-weight: 100;
+  z-index: 999;
+  border-bottom: 1px solid #e6e6e6;
 `
 
 const Nav = Styled.header `
-  padding: 0 .2rem 0 .4rem;
-  height: .43rem;
-  background: #ff0;
+  padding: .48rem .2rem 0 .4rem;
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e6e6e6;
   span{
     display: block;
+    font-size: .12rem;
+    color: #757575;
+    &:last-child{
+      color: #333333;
+    }
   }
 
 `
 
 const NavList = Styled.div `
-  padding:.2rem;
   display: ${ props => props.dis === true ? 'block' : 'none'};
-  position: relative;
-  height: 2rem;
-  width: 100%;
-  background: #f0f;
+  position: fixed;
+  top: 1.05rem;
+  background: rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 102;   
+  div{
+    position: relative;
+    height: 2rem;
+    width: 100%;
+    background: #fff;
+    z-index: 101;
+  
+  }
 `
+
+// display: ${ props => props.dis === true ? 'block' : 'none'};
+// position: relative;
+// height: 2rem;
+// width: 100%;
+// background: #f0f;
+// z-index: 101;
+// transition: all .2s linear
+
+// div{
+//   position: fixed;
+//   background: rgba(0,0,0,0.4) !important;
+//   width: 100vw;
+//   height: 100vh;
+//   z-index: 100;   
+// }
 
 export {
   LookContainer,

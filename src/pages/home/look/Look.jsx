@@ -19,6 +19,7 @@ import {
 } from './LookStyled'
 
 import Search from 'components/search/Search'
+import LookList from './look_list/LookList'
 
 class Look extends Component {
   constructor(props) {
@@ -35,7 +36,6 @@ class Look extends Component {
 
 
   render() {
-    console.log(this.state.dis)
     let tagData = this.state.tags.slice(0,4) || []
 
     return (
@@ -47,22 +47,24 @@ class Look extends Component {
             bgcolor="#f4f4f4"
             radius={30}
           ></Search>
+          <Nav>
+            {
+              tagData.map(value => (
+                <span key={value.key}  onClick={() => this.handleSwich(value.key,value.groups,this.state.dis)}>
+                  {value.name}ⅴ
+                </span>  
+              ))  
+            }
+            <span onClick={() => this.handleSwich(this.state.dis)}>•••</span>  
+          </Nav> 
 
+          <NavList dis={this.state.dis}>
+            <div></div>
+          </NavList> 
         </Header>
-        <Nav>
-          {
-            tagData.map(value => (
-              <span key={value.key}  onClick={() => this.handleSwich(value.key,value.groups,this.state.dis)}>
-                {value.name}ⅴ
-              </span>  
-            ))  
-          }
-          <span onClick={() => this.handleSwich('order')}>•••</span>  
-        </Nav> 
 
-        <NavList dis={this.state.dis}>
 
-        </NavList> 
+        <LookList></LookList> 
 
       </LookContainer>
     )
@@ -84,27 +86,12 @@ class Look extends Component {
     else{
       dis = !dis
     }
-
-    console.log(dis)
-
     this.setState({
       display,
       groups,
       dis
     })
   }
-
-  // componentDidMount() {
-  //   new BScroll('.questions_scroll', {
-  //     startX:0,
-  //     click:true,
-  //     scrollX:true,
-  //     scrollY:false,
-  //     eventPassthrough:'vertical'
-  //   })
-
-  //   new BScroll('#reno_scorll')
-  // }
 
 
 }

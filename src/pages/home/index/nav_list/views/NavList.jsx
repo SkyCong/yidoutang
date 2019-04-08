@@ -34,7 +34,6 @@ class NavList extends Component {
   }
 
   componentDidMount() {
-    console.log(0)
     new BScroll('.nav_scroll', {
       startX:0,
       click:true,

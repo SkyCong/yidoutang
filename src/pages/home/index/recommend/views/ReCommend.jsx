@@ -32,7 +32,6 @@ class ReCommend extends Component {
   }
 
   render() {
-    console.log(this.props.follow.masters)
     let ajaxData = this.props.follow.masters || []
     return (
       <ReCommendContainer>
