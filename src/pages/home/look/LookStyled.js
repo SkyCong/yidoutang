@@ -17,7 +17,6 @@ const Header = Styled.header `
   height: 1.08rem;
   position: fixed;
   background: #fff;
-  text-align: center;
   font-size: .18rem;
   font-weight: 100;
   z-index: 999;
@@ -43,17 +42,65 @@ const Nav = Styled.header `
 
 const NavList = Styled.div `
   display: ${ props => props.dis === true ? 'block' : 'none'};
-  ul{  
+  div{  
     position: relative;
-    height: 2rem;
+    padding: .15rem .2rem;
     width: 100%;
     background: #fff;
     z-index: 101;
-    li{
+    ol{
+      padding: 0 .2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      li{
+        font-size: .14rem;
+        height: .68rem;
+        line-height: .68rem;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    section{    
+      width: 100%;
+      
+      color: #333;
+      font-size: .12rem;
+      h5{
+        padding-bottom: .1rem;
+      }
+      ul{
+        overflow: auto;
+        padding-bottom: .1rem;
+        li{
+          float: left;
+          font-size: .12rem;
+          width: .72rem;
+          height: .28rem;
+          margin: 0 .05rem .1rem .05rem;
+          background: #f6f6f6;
+          text-align: center;
+          line-height: .28rem;
+          border-radius: 4px;
+        }
+      }
+    }  
+    p{
+      i{
+        display: inline-block;
+        width: .16rem;
+        height: .16rem;
+      }
+      font-size: .15rem;
+      color: #b2b2b2;
+      height: .56rem;
+      text-align: center;
+      line-height: .56rem;
+      border-top: 1px solid #ccc;
     }
   }
 
-  div{
+
+  footer{
     position: fixed;
     background: rgba(0,0,0,0.8);
     width: 100vw;
