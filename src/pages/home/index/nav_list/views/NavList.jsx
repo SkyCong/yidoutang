@@ -28,7 +28,9 @@ class NavList extends Component {
             ))   
           }              
         </ul>  
-        <div></div>
+        <div>                
+          <img src='http://pic.rmb.bdstatic.com/859063c763d83e4844bdcb74e8e08fab9906.gif'/>
+        </div>
       </NavListContainer>
     )
   }

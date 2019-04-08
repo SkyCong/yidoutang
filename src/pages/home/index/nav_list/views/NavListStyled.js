@@ -36,9 +36,10 @@ const NavListContainer = Styled.div `
     right: 0;
     bottom: 0;
     position: absolute;
-    width: .4rem;
-    height: .03rem;
-    background: #ffda46;
+    width: .8rem;
+    height: .2rem;
+    text-align: center;
+    /* background: #ffda46; */
     border-radius: 2px;
   }
 

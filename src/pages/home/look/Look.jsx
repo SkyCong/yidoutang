@@ -36,8 +36,8 @@ class Look extends Component {
 
 
   render() {
-    let tagData = this.state.tags.slice(0,4) || []
-
+    let tagData = this.state.tags || []
+    console.log(tagData)
     return (
       <LookContainer>
 
@@ -49,17 +49,25 @@ class Look extends Component {
           ></Search>
           <Nav>
             {
-              tagData.map(value => (
+              tagData.slice(0,4).map(value => (
                 <span key={value.key}  onClick={() => this.handleSwich(value.key,value.groups,this.state.dis)}>
                   {value.name}ⅴ
                 </span>  
               ))  
+              
             }
-            <span onClick={() => this.handleSwich(this.state.dis)}>•••</span>  
+            {
+              tagData.slice(4,5).map(value => (
+                <span key={value.key} onClick={() => this.handleSwich(value.key,value.groups,this.state.dis)}>•••</span>  
+              ))   
+            }
           </Nav> 
 
-          <NavList dis={this.state.dis}>
-            <div></div>
+          <NavList dis={this.state.dis} >
+            <ul>
+              <li></li>
+            </ul>
+            <div onClick={() => this.handleBay(this.state.dis)}></div>
           </NavList> 
         </Header>
 
@@ -92,8 +100,22 @@ class Look extends Component {
       dis
     })
   }
+  handleBay(dis){
+    dis = false  
+    this.setState({
+      dis
+    })  
+  }
+  // handleB(bay){
+  //   console.log('B')
+  //   bay = true
 
+  //   this.setState({
+  //     bay
+  //   })
+  //   console.log(bay)
 
+  // }
 }
 
 export default withRouter(Look)
