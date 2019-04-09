@@ -4,7 +4,13 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-
+  
+  .hide {
+    display: none!important;
+}
+  .show {
+    display: block!important;
+}
 html,
 body {
   overflow: hidden;

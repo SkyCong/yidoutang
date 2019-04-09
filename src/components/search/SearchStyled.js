@@ -35,6 +35,7 @@ const InputContainer = Styled.div `
   }
   input {
     font-size: .14rem;
+    line-height: .2rem;
     color: #999;
     height: 100%;
     background: transparent;
