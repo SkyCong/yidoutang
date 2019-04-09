@@ -42,22 +42,26 @@ const Nav = Styled.header `
 
 const NavList = Styled.div `
   display: ${ props => props.dis === true ? 'block' : 'none'};
-  div{  
+  div{
     position: relative;
     padding: .15rem .2rem;
     width: 100%;
     background: #fff;
     z-index: 101;
+    
     ol{
       padding: 0 .2rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       li{
-        font-size: .14rem;
-        height: .68rem;
-        line-height: .68rem;
+        font-size: .12rem;
+        height: .5rem;
+        line-height: .5rem;
         border-bottom: 1px solid #ccc;
+        :last-child{
+          border-bottom: 0;
+        }
       }
     }
     section{    
