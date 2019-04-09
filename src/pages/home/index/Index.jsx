@@ -38,16 +38,16 @@ class Index extends Component {
         <IndexHeader onSwitch={this.handleSwitch}></IndexHeader>
 
         <Switch>
-          <Redirect exact from='/' to='/index/find' />
-          <Route path='/index/find' component={IndexFind}/>
-          <Route path='/index/follow' component={IndexFollow}/>
+          <Route exact path='/home' children={() => <IndexFind />}/>
+          <Route path='/home/indexfind' children={() => <IndexFind />}/>
+          <Route path='/home/indexfollow' children={() => <IndexFollow />}/>
         </Switch>
       </IndexContainer>
     )
   }
 
   handleSwitch(dir) {
-    let path = dir === 'right' ? '/index/find' : '/index/follow'
+    let path = dir === 'right' ? '/home/indexfind' : '/home/indexfollow'
     this.props.history.push(path)
   }
 }
