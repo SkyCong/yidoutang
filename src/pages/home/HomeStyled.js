@@ -2,7 +2,7 @@ import Styled from 'styled-components'
 
 const HomeContainer = Styled.div `
   height: 100%;
-  background: #f8f8f8;
+  background: #fff;
   position: relative;
   .am-tabs-tab-bar-wrap{
     height : 48px;

@@ -6,6 +6,7 @@ const NavListContainer = Styled.div `
   touch-action: none;
   position: relative;
   height: .64rem;
+  border-bottom: 1px solid #ccc;
   ul{
     width: 9rem;
     padding: 0 .1rem;
@@ -39,7 +40,6 @@ const NavListContainer = Styled.div `
     width: .8rem;
     height: .2rem;
     text-align: center;
-    /* background: #ffda46; */
     border-radius: 2px;
   }
 

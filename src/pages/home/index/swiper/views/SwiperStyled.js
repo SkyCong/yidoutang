@@ -1,6 +1,7 @@
 import Styled from 'styled-components'
 
 const SwiperContainer = Styled.div `
+  background : #fff;
   height: 0;
   font-size: 0;
   padding-bottom: 43%;
