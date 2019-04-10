@@ -52,8 +52,8 @@ const InputContainer = Styled.div `
 
 const BorderedInputContainer = border({
   component: InputContainer,
-  radius: 5,
-  color: '#ee7530'
+  width: '0 0 1px 0',
+  color: '#ccc'
 })
 
 export {

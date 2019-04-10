@@ -18,7 +18,10 @@ import my from 'assets/images/icon/my.png'
 import myActive from 'assets/images/icon/my-active.png'
 
 import {
-  withRouter
+  withRouter,
+  Route,
+  Redirect,
+  Switch
 } from 'react-router-dom'
 
 
@@ -61,12 +64,12 @@ class HomeList extends React.Component {
               this.setState({
                 selectedTab: 'index',
               });
-              this.props.history.push('/')
+              this.props.history.push('/home/indexfind')
             }}
             data-seed="logId"
           >
 
-            <Index></Index>
+            <Route path='/home/indexfind' children={() => <Index />}/>
 
           </TabBar.Item>
 
@@ -92,11 +95,11 @@ class HomeList extends React.Component {
               this.setState({
                 selectedTab: 'look',
               });
-              this.props.history.push('/look')
+              this.props.history.push('/home/look')
             }}
             data-seed="logId1"
           >
-            <Look></Look>
+            <Route path='/home/look' children={() => <Look />}/>
           </TabBar.Item>
           <TabBar.Item
             icon={
@@ -120,10 +123,10 @@ class HomeList extends React.Component {
               this.setState({
                 selectedTab: 'renovation',
               });
-              this.props.history.push('/renovation')
+              this.props.history.push('/home/renovation')
             }}
           >
-            <Renovation></Renovation>
+            <Route path='/home/renovation' children={() => <Renovation />}/>
           </TabBar.Item>
           <TabBar.Item
             icon={{ uri: my }}
@@ -135,10 +138,10 @@ class HomeList extends React.Component {
               this.setState({
                 selectedTab: 'my',
               });
-              this.props.history.push('/my')
+              this.props.history.push('/home/my')
             }}
           >
-            <My></My>
+            <Route path='/home/my' children={() => <My />}/>
           </TabBar.Item>
         </TabBar> 
       </div>

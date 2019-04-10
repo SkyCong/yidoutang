@@ -1,6 +1,7 @@
 import Styled from 'styled-components'
 
 const IndexContainer = Styled.div `
+  height: 100%;
   display: flex;
   flex-direction: column;
   main {
@@ -53,12 +54,20 @@ const Header = Styled.header `
   line-height: .64rem;
   font-size: .18rem;
   font-weight: 100;
-
+  width: 100%;
+  position: fixed;
+  z-index: 999;
 `
 
+const Scroll = Styled.div `
+  height: 100%;
+  main{
+    padding-top: .64rem;
+  }
+`
 
 const TableList = Styled.header `
-  height: .43rem;
+  height: .44rem;
   background: #ffffff;
   display: flex;
   justify-content: center;
@@ -71,5 +80,6 @@ export {
   IndexContainer,
   Header,
   BorderedNav,
-  TableList
+  TableList,
+  Scroll
 }

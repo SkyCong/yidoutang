@@ -32,12 +32,12 @@ class ReCommend extends Component {
   }
 
   render() {
-    let ajaxData = this.props.follow.masters || []
+    let ajaxData = this.props.follow || []
     return (
       <ReCommendContainer>
         <h3>
           达人推荐
-          <span>换一批</span>
+          <span onClick={ () => this.handleReplace() }>换一批</span>
         </h3>
         <div className="follow_scroll">
           <ul> 
@@ -61,6 +61,10 @@ class ReCommend extends Component {
   }
 
   fetchData() {
+    this.props.fetchData()
+  }
+
+  handleReplace(){
     this.props.fetchData()
   }
 

@@ -39,9 +39,6 @@ class Look extends Component {
 
 
     let tagData = this.state.tags  || []
-
-    console.log(this.props.dis)
-
     return (
       <LookContainer>
         <Header>          
@@ -149,8 +146,8 @@ class Look extends Component {
       dis
     })
 
-    console.log(type)
-    console.log(dis)
+    // console.log(type)
+    // console.log(dis)
   }
   
   handleBay(dis){
