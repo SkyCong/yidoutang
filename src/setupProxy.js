@@ -8,6 +8,13 @@ module.exports = function(app) {
       pathRewrite: {
         '^/api': ''
       }
-    })
+    }),
+    proxy('/www', { 
+      target: 'https://m.yidoutang.com/',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/www': ''
+      }
+    }),
   )
 }

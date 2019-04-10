@@ -58,7 +58,9 @@ class Index extends Component {
   }
 
   componentDidMount() {
-    new BScroll('#index_scroll')
+    new BScroll('#index_scroll', {
+      click:true
+    })
   }
 }
 

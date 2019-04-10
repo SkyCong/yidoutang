@@ -9,8 +9,12 @@ const getFollowSync = follow => ({
 
 const getFollowAsync = () => {
   return async dispatch => {
-    let result = await http.get('/api/follow')
-    dispatch(getFollowSync(result.data))
+    let follow = []
+    for(let i=0;i<3;i++){
+      let result = await http.get('/www/apiv4/user/modelmasters')
+      follow = follow.concat(result.data.masters)
+    }
+    dispatch(getFollowSync(follow))
   }
 }
 

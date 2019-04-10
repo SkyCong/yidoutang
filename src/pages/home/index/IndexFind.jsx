@@ -8,9 +8,9 @@ export default class IndexFind extends Component {
   render() {
     return (
       <> 
-        <Swiper></Swiper>
-        <NavList></NavList>
-        <ScorllData></ScorllData>
+        <Swiper />
+        <NavList />
+        <ScorllData type='find'/>
       </>
     )
   }
