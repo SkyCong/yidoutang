@@ -24,7 +24,6 @@ class ScorllData extends Component {
   }
   
   render() {
-    console.log(this.props.type)
     let ScorllData = this.props.type === 'find' ?  this.props.list.recommend || [] : this.state.followData || []
 
     return (
