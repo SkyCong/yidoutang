@@ -1,19 +1,10 @@
 import React, { Component } from 'react'
 
 import http from 'utils/fetch'
-import BScroll from 'better-scroll'
-
-import {
-  Route,
-  Switch,
-  withRouter,
-  Redirect
-} from 'react-router-dom'
 
 import {
   LookContainer,
   Header,
-  Scorll,
   Nav,
   NavList
 } from './LookStyled'
@@ -139,7 +130,7 @@ class Look extends Component {
   }
 
   handleSwich(type,dis) {
-    dis = type == this.state.type ? !dis : true
+    dis = type === this.state.type ? !dis : true
 
     this.setState({
       type,
@@ -158,4 +149,4 @@ class Look extends Component {
   }
 }
 
-export default withRouter(Look)
+export default Look

@@ -41,7 +41,7 @@ const Nav = Styled.header `
 `
 
 const NavList = Styled.div `
-  display: ${ props => props.dis === true ? 'block' : 'none'};
+  display: ${ props => props.bool === true ? 'block' : 'none'};
   div{
     position: relative;
     padding: .15rem .2rem;

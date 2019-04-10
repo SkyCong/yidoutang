@@ -96,6 +96,11 @@ const MyListContainer = Styled.div `
         width: .5rem;
         height: 100%;
         float: right;
+        svg{
+          width: 1em;
+          height: 1em;
+          vertical-align: sub;
+        }
       }
     }
   }

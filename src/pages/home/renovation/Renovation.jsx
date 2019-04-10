@@ -4,13 +4,6 @@ import http from 'utils/fetch'
 import BScroll from 'better-scroll'
 
 import {
-  Route,
-  Switch,
-  withRouter,
-  Redirect
-} from 'react-router-dom'
-
-import {
   RenoContainer,
   Header,
   Scorll,
@@ -152,4 +145,4 @@ class Renovation extends Component {
 
 }
 
-export default withRouter(Renovation)
+export default Renovation

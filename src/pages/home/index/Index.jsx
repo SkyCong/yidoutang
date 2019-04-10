@@ -3,8 +3,7 @@ import React, { Component } from 'react'
 import {
   Route,
   Switch,
-  withRouter,
-  Redirect
+  withRouter
 } from 'react-router-dom'
 
 import {

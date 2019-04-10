@@ -5,7 +5,8 @@ import store from './store/'
 import { Provider } from 'react-redux'
 
 import Home from 'pages/home/Home'
-import Display from 'pages/display/Display'
+import SearchData from 'pages/display/search/SearchData'
+import Detailed from 'pages/display/detailed/Detailed'
 
 import {
   BrowserRouter as Router,
@@ -23,7 +24,8 @@ export default class App extends Component {
           <Switch>
             <Redirect exact from="/" to="/home/indexfind" />
             <Route path='/home' component={Home}/>
-            <Route path='/display' component={Display}/>
+            <Route path='/search' component={SearchData}/>
+            <Route path='/detailed' component={Detailed}/>
           </Switch>
         </Router>
 

@@ -19,9 +19,7 @@ import myActive from 'assets/images/icon/my-active.png'
 
 import {
   withRouter,
-  Route,
-  Redirect,
-  Switch
+  Route
 } from 'react-router-dom'
 
 
