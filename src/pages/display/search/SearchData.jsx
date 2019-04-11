@@ -19,7 +19,7 @@ export default class SearchData extends Component {
     this.state = {
       hot: [],
       bool: false,
-      dis: true,
+      dis: false,
       val: '',
       searchList: []
     }
@@ -64,7 +64,13 @@ export default class SearchData extends Component {
             <ul>
               {
                 searchListData.map(value => (
-                  <li key={value.id}>
+                  <li key={value.id} onClick={() => 
+                    {
+                      this.setState(
+                        {dis: !this.state.dis}
+                      )
+                    }
+                  }>
                     {value.word}
                   </li>
                 ))
