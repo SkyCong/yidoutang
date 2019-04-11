@@ -17,7 +17,9 @@ const Header = Styled.div `
     background: #fff;
   }
 `
-
+const SearchOn = Styled.div `
+  display: none;
+`
 const Main = Styled.div `
   height: 3.23rem;
   padding: .2rem;
@@ -45,18 +47,47 @@ const Main = Styled.div `
 
 const MainList = Styled.div `
 
-  
   display: ${ props => props.bool === true ? 'block' : 'none'};
   width: 100%;
   height: 6.3rem;
-  background: tomato;
+  background: #fff;
   position: absolute;
   top: .64rem;
   z-index: 100;
+  ul{
+    li{
+      height: .5rem;
+      line-height: .5rem;
+      padding-left: .2rem;
+      font-size: .14rem;
+      color: #757575;
+      border-bottom: 1px solid #e6e6e6;
+      &:hover{
+        background: #eee;
+      }
+    }
+  } 
+
+`
+
+const SearchListContainer = Styled.div `
+
+`
+
+const ListNav = Styled.div `
+
+`
+
+
+const ListCommand = Styled.div `
 
 `
 export {
   Header,
+  SearchOn,
   Main,
-  MainList
+  MainList,
+  SearchListContainer,
+  ListNav,
+  ListCommand
 }

@@ -29,18 +29,20 @@ class Search extends Component {
       <SearchContainer>
         <TempComp { ...this.props } onClick={() =>{this.props.history.push('/search')}}>
           <img src={SearchIcon} alt="searchicon"/>
-          <input type="text" placeholder="卫生间" ref="dom" value={this.state.InputValue} onChange={(event) => {this.handleValue(event)}}/>
+          <input type="text" placeholder="卫生间" value={this.state.InputValue} onChange={(event) => {this.handleValue(event)}}/>
         </TempComp>
         <img src={MessageIcon} alt="messageIcon"/>
       </SearchContainer>
     )
   }
+
   handleValue(event){
     this.setState({
       InputValue : event.target.value
     })
-    console.log(event.target.value)
+    this.props.pass(event.target.value)//获取实时的传值 通过事件传递上层父组件去（DATA）
   }
+
 }
 
 export default withRouter(Search)

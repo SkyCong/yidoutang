@@ -136,14 +136,14 @@ const Questions = Styled.div `
 const Activitys = Styled.div `
   padding: 0 .2rem;
   ul{
-    height: 1.5rem;
+    overflow: hidden;
     width: 100%;
     border-top: 1px solid #ccc;
     padding: .28rem 0;
     li{
-      width: 1.3rem;
+      width: 40%;
       height: .72rem;
-      float: left;
+      float: right;
       position: relative;
       img{
         width: 100%;
@@ -159,9 +159,9 @@ const Activitys = Styled.div `
         z-index: 100;
       }
       &:first-child{
-        width: 2rem;
+        float: left;
+        width: 58%;
         height: 1.5rem;
-        padding-right: .08rem;
         b{
           top: 1.16rem;
         }
