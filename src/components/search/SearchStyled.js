@@ -44,6 +44,11 @@ const InputContainer = Styled.div `
     outline: none;
     font-weight: 400;
   }
+  svg{
+    width: 1em;
+    height: 1em;
+    margin-right: .1rem;
+  }
   input::-webkit-input-placeholder {
     color: #999;
   }

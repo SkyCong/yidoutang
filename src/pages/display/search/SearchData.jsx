@@ -26,12 +26,13 @@ export default class SearchData extends Component {
       cdx: ''
     }
     this.handleVal = this.handleVal.bind(this)
+    this.handleDis = this.handleDis.bind(this)
   }
   
   render() {
     let hotData = this.state.hot || []
     let searchListData = this.state.searchList || []
-    // let searchDisplay = this.state.searchDis || []
+    console.log(this.state.bool)
     return (
       <>
         <Header>
@@ -41,10 +42,11 @@ export default class SearchData extends Component {
             radius={30}
             pass={this.handleVal}//将父组件的事件传递下去 获取子组件的值
             cdx={this.state.cdx}
+            passDis={this.handleDis}
           ></Search>
           <i onClick={() =>{this.props.history.push('/home')}}>取消</i>
         </Header>
-        <SearchOn className={this.state.dis === true ? 'show' : 'hide'}>
+        <SearchOn className={this.state.dis === true ? 'show' : 'hide'} >
           <Main>
             <h3>热门搜索</h3>
             <ul>
@@ -67,6 +69,7 @@ export default class SearchData extends Component {
               }
             </ul>
           </Main>
+          
           <MainList bool={this.setState.bool = this.state.val === '' ? false : true}>
             <ul>
               {
@@ -79,6 +82,7 @@ export default class SearchData extends Component {
                           cdx: value.word
                         }
                       )
+                      // console.log('click'+this.state.cdx)
                       this.fetchDataList(value.word)
                     }
                   }  
@@ -103,7 +107,14 @@ export default class SearchData extends Component {
     },() =>{
       this.fetchDataVal()
    })
-   
+  }
+
+  handleDis(){
+    this.setState({
+      val: '',
+      dis: true
+    })
+    
   }
 
   async fetchData(){

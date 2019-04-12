@@ -2,9 +2,13 @@ import Styled from 'styled-components'
 import ellipsis from 'components/styled/ellipsis'
 
 const Header = Styled.div `
+  width: 100%;
   height: .64rem;
   background: #fff;
   border-bottom: 1px solid #e6e6e6;
+  position: absolute;
+  top: 0;
+  z-index: 999;
   i{
     color: #999;
     font-size: .13rem;
@@ -26,6 +30,9 @@ const Main = Styled.div `
   padding: .2rem;
   background: #fff;
   border-bottom: 1px solid #e6e6e6;
+  position: absolute;
+  z-index: 999;
+  top: 0.64rem;
   h3{
     font-size: .16rem;
     padding-bottom: .18rem;
@@ -54,7 +61,7 @@ const MainList = Styled.div `
   background: #fff;
   position: absolute;
   top: .64rem;
-  z-index: 100;
+  z-index: 1000;
   ul{
     li{
       height: .5rem;
@@ -82,6 +89,10 @@ const SearchListContainer = Styled.div `
 
 const ListNav = Styled.div `
   overflow-x: scroll;
+  position: absolute;
+  z-index: 999;
+  top: 0.64rem;
+  background: #fff;
   ul{
     width: 7.2rem;
     display: flex;
@@ -114,10 +125,16 @@ const ListNav = Styled.div `
 
 const ListCommand = Styled.div `
   padding: 0 .2rem;
+  height: 100vh;
   h3{
+    width: 100%;
+    background: #fff;
     font-weight: normal;
     overflow: hidden;
-    padding-top: .1rem;
+    position: absolute;
+    z-index: 999;
+    top: 1rem;
+    left: 0;
     span{
       float: left;
       font-size: .11rem;
@@ -133,7 +150,9 @@ const ListCommand = Styled.div `
     }
   }
   main{
+    height: 100%;
     ul{
+      padding-top: 1.3rem;
       display: flex;
       flex-direction: column;
       li{

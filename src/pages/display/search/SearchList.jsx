@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import http from 'utils/fetch'
+import BScroll from 'better-scroll'
 
 import {
   SearchListContainer,
@@ -51,7 +51,7 @@ class SearchList extends Component {
             <span>推荐</span>
             <span>最新</span>
           </h3>
-          <main> 
+          <main id="searchData_scroll"> 
             <ul>
               {
                 searchDisData.map(value => (                  
@@ -78,6 +78,12 @@ class SearchList extends Component {
         </ListCommand>
       </SearchListContainer>
     )
+  }
+
+  componentDidMount() {
+    new BScroll('#searchData_scroll', {
+      click:true
+    })
   }
   
 }
