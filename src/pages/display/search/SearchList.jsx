@@ -18,19 +18,19 @@ const mapState = state => ({
 class SearchList extends Component {
   constructor(props) {
     super(props)
-    this.fetchData()
+   
     this.state = {
-      searchList: []
+      searchList: [],
+      word: ''
     }
-    // this.handleVal = this.handleVal.bind(this)
-
+    
   }
-  
-  render() {
-    let searchNavData = this.props.list.serachNav || []
-    let searchListData = this.state.searchList || []
-    console.log(searchListData)
 
+  render() {
+    
+    let searchNavData = this.props.list.serachNav || []
+    let searchDisData = this.props.data || []
+    
     return (
       <SearchListContainer className={this.props.dis === false ? 'show' : 'hide'}>
         <ListNav>
@@ -44,17 +44,17 @@ class SearchList extends Component {
               ))
             }
           </ul>
+        </ListNav>
+
+        <ListCommand>
           <h3>
             <span>推荐</span>
             <span>最新</span>
           </h3>
-        </ListNav>
-
-        <ListCommand>
           <main> 
             <ul>
               {
-                searchListData.map(value => (                  
+                searchDisData.map(value => (                  
                   <li key={value.group_id}>
                     <h4>
                       <img src={value.user_pic} alt={value.user_id} />
@@ -76,52 +76,10 @@ class SearchList extends Component {
             </ul>
           </main>
         </ListCommand>
-        {/* <MainList bool={this.setState.bool = this.state.val === '' ? false : true}>
-          <ul>
-            {
-              searchListData.map(value => (
-                <li key={value.id}>
-                  {value.word}
-                </li>
-              ))
-            }
-          </ul>
-        </MainList> */}
       </SearchListContainer>
     )
   }
-
-  // handleVal(data){
-
-  //   this.setState({
-  //     val: data //把父组件中的parentText替换为子组件传递的值
-  //   },() =>{
-  //     console.log(this.state.val)//setState是异步操作，但是我们可以在它的回调函数里面进行操作
-  //     this.fetchDataVal()
-  //  })
-   
-  // }
-
-
-  async fetchData(){
-    let result = await http.get('/www/apiv4/search/case?highlight=1&order=0&page=1&q=%E5%9C%B0%E6%9D%BF')
-    if(result){
-      this.setState({
-        searchList: result.data.cases
-      })
-    }
-  }
   
 }
-// ('/www/apiv3/apiv4/search/pic?&page=1&q=qqq)
 
 export default connect(mapState)(SearchList)
-
-// {
-//   // searchListData.map(value => (
-//   //   <li key={value.id}>
-//   //     {value.word}
-//   //   </li>
-//   // ))
-  
-// }

@@ -18,18 +18,20 @@ export default class SearchData extends Component {
     this.fetchData()
     this.state = {
       hot: [],
+      searchList: [],
+      searchDis: [],
       bool: false,
-      dis: false,
+      dis: true,
       val: '',
-      searchList: []
+      cdx: ''
     }
     this.handleVal = this.handleVal.bind(this)
-    this.fetchDataVal()  
   }
   
   render() {
     let hotData = this.state.hot || []
     let searchListData = this.state.searchList || []
+    // let searchDisplay = this.state.searchDis || []
     return (
       <>
         <Header>
@@ -38,6 +40,7 @@ export default class SearchData extends Component {
             bgcolor="#f4f4f4"
             radius={30}
             pass={this.handleVal}//将父组件的事件传递下去 获取子组件的值
+            cdx={this.state.cdx}
           ></Search>
           <i onClick={() =>{this.props.history.push('/home')}}>取消</i>
         </Header>
@@ -50,8 +53,12 @@ export default class SearchData extends Component {
                   <li key={value.id} onClick={() => 
                     {
                       this.setState(
-                        {dis: !this.state.dis}
+                        {
+                          dis: !this.state.dis,
+                          cdx: value.word
+                        }
                       )
+                      this.fetchDataList(value.word)
                     }
                   }>
                     {value.word}
@@ -67,31 +74,33 @@ export default class SearchData extends Component {
                   <li key={value.id} onClick={() => 
                     {
                       this.setState(
-                        {dis: !this.state.dis}
+                        {
+                          dis: !this.state.dis,
+                          cdx: value.word
+                        }
                       )
+                      this.fetchDataList(value.word)
                     }
-                  }>
-                    {value.word}
-                  </li>
+                  }  
+                    dangerouslySetInnerHTML={{ __html: value.highlight }}
+                  />
                 ))
               }
             </ul>
           </MainList>
         </SearchOn>
 
-        <SearchList dis={this.state.dis}>
+        <SearchList dis={this.state.dis} data={this.state.searchDis}>
 
         </SearchList>
       </>
-    );
+    )
   }
 
   handleVal(data){
-
     this.setState({
       val: data //把父组件中的parentText替换为子组件传递的值
     },() =>{
-      console.log(this.state.val)//setState是异步操作，但是我们可以在它的回调函数里面进行操作
       this.fetchDataVal()
    })
    
@@ -123,6 +132,17 @@ export default class SearchData extends Component {
     if(searchVal){
       this.setState({
         searchList: searchVal.data
+      })
+    }
+  }
+
+  async fetchDataList(word){
+    
+    let result = await http.get('/www/apiv4/search/case?highlight=1&order=0&page=1&q='+word)
+    
+    if(result){
+      this.setState({
+        searchDis: result.data.cases
       })
     }
   }

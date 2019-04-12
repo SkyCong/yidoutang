@@ -24,10 +24,7 @@ class Look extends Component {
     }
     this.handleSwich = this.handleSwich.bind(this)
   }
-
-
   render() {
-
 
     let tagData = this.state.tags  || []
     return (
@@ -61,7 +58,7 @@ class Look extends Component {
             }
           </Nav> 
 
-          <NavList dis={this.state.dis} >
+          <NavList className={this.state.dis === false ? 'hide' : 'show'}>
             {
               tagData.slice(0,4).map(value => (
                 <div type={this.state.type} key={value.key} className={value.key === this.state.type ? 'show' : 'hide'}> 
@@ -137,8 +134,8 @@ class Look extends Component {
       dis
     })
 
-    // console.log(type)
-    // console.log(dis)
+    console.log(type)
+    console.log(dis)
   }
   
   handleBay(dis){

@@ -66,6 +66,10 @@ const MainList = Styled.div `
       &:hover{
         background: #eee;
       }
+      em{
+        font-weight: bold;
+        color: #ffb000
+      }    
     }
   } 
 
@@ -104,6 +108,12 @@ const ListNav = Styled.div `
       }
     }
   }
+
+`
+
+
+const ListCommand = Styled.div `
+  padding: 0 .2rem;
   h3{
     font-weight: normal;
     overflow: hidden;
@@ -122,12 +132,6 @@ const ListNav = Styled.div `
       }
     }
   }
-
-`
-
-
-const ListCommand = Styled.div `
-  padding: 0 .2rem;
   main{
     ul{
       display: flex;

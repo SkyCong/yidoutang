@@ -25,11 +25,13 @@ class Search extends Component {
 
   render() {
     let TempComp = this.props.hasborder ? BorderedInputContainer : InputContainer
+    let cdx = this.props.cdx
+    
     return (
       <SearchContainer>
         <TempComp { ...this.props } onClick={() =>{this.props.history.push('/search')}}>
           <img src={SearchIcon} alt="searchicon"/>
-          <input type="text" placeholder="卫生间" value={this.state.InputValue} onChange={(event) => {this.handleValue(event)}}/>
+          <input type="text" placeholder="卫生间" value={cdx === '' ? this.state.InputValue : this.props.cdx} onChange={(event) => {this.handleValue(event)}}/>
         </TempComp>
         <img src={MessageIcon} alt="messageIcon"/>
       </SearchContainer>
