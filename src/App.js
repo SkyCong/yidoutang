@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import Home from 'pages/home/Home'
 import SearchData from 'pages/display/search/SearchData'
 import Detailed from 'pages/display/detailed/Detailed'
+import CS from 'pages/display/cs/CS'
 
 import {
   BrowserRouter as Router,
@@ -26,6 +27,7 @@ export default class App extends Component {
             <Route path='/home' component={Home}/>
             <Route path='/search' component={SearchData}/>
             <Route path='/detailed' component={Detailed}/>
+            <Route path='/cs' component={CS}/>
           </Switch>
         </Router>
 

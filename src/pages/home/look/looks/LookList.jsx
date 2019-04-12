@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import http from 'utils/fetch'
 import BScroll from 'better-scroll'
+import Masonry from 'react-masonry-component'
 
 import {
   LookListContainer,
@@ -23,7 +24,15 @@ class LookList extends Component {
 
     return (
       <LookListContainer id="look_scroll">
-        <main >
+        <Masonry 
+          className={'my-gallery-class'} // default ''
+          elementType={'main'} // default 'div'
+          options={{transitionDuration: 5, transitionProperty: 'width'}} // default {}
+          disableImagesLoaded={false} // default false
+          updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+          // imagesLoadedOptions={imagesLoadedOptions} // default {}
+        >
+
         {
           picsData.map(value => (
             <div key={value.match_id}>
@@ -37,10 +46,15 @@ class LookList extends Component {
             </div>  
           ))  
         }
-        </main>
+
+        </Masonry>
       </LookListContainer>
     )
   }
+
+
+
+
 
   async fetchData(){
     let result = await http.get('/api/lookData')

@@ -12,7 +12,7 @@ const LookListContainer = Styled.div `
     flex-wrap: wrap;  
     justify-content: space-between;
     div{
-      width:48%;
+      width:46%;
       background: #fff;
       img{
         width: 98%;
