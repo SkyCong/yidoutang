@@ -4,17 +4,9 @@ import http from 'utils/fetch'
 import BScroll from 'better-scroll'
 
 import {
-  Route,
-  Switch,
-  withRouter,
-  Redirect
-} from 'react-router-dom'
-
-import {
   LookListContainer,
 } from './LookListStyled'
 
-import Search from 'components/search/Search'
 
 class LookList extends Component {
   constructor(props) {
@@ -67,6 +59,4 @@ class LookList extends Component {
 
 }
 
-export default withRouter(LookList)
-
-/* style={{marginBottom:"5px"}} */
+export default LookList

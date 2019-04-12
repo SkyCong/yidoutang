@@ -1,19 +1,10 @@
 import React, { Component } from 'react'
 
 import http from 'utils/fetch'
-import BScroll from 'better-scroll'
-
-import {
-  Route,
-  Switch,
-  withRouter,
-  Redirect
-} from 'react-router-dom'
 
 import {
   LookContainer,
   Header,
-  Scorll,
   Nav,
   NavList
 } from './LookStyled'
@@ -33,10 +24,7 @@ class Look extends Component {
     }
     this.handleSwich = this.handleSwich.bind(this)
   }
-
-
   render() {
-
 
     let tagData = this.state.tags  || []
     return (
@@ -70,7 +58,7 @@ class Look extends Component {
             }
           </Nav> 
 
-          <NavList dis={this.state.dis} >
+          <NavList className={this.state.dis === false ? 'hide' : 'show'}>
             {
               tagData.slice(0,4).map(value => (
                 <div type={this.state.type} key={value.key} className={value.key === this.state.type ? 'show' : 'hide'}> 
@@ -139,15 +127,15 @@ class Look extends Component {
   }
 
   handleSwich(type,dis) {
-    dis = type == this.state.type ? !dis : true
+    dis = type === this.state.type ? !dis : true
 
     this.setState({
       type,
       dis
     })
 
-    // console.log(type)
-    // console.log(dis)
+    console.log(type)
+    console.log(dis)
   }
   
   handleBay(dis){
@@ -158,4 +146,4 @@ class Look extends Component {
   }
 }
 
-export default withRouter(Look)
+export default Look

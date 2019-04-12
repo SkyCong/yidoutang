@@ -29,7 +29,7 @@ class NavList extends Component {
           }              
         </ul>  
         <div>                
-          <img src='http://pic.rmb.bdstatic.com/859063c763d83e4844bdcb74e8e08fab9906.gif'/>
+          <img src='http://pic.rmb.bdstatic.com/859063c763d83e4844bdcb74e8e08fab9906.gif' alt='gif'/>
         </div>
       </NavListContainer>
     )
