@@ -5,7 +5,12 @@ import BScroll from 'better-scroll'
 import Masonry from 'react-masonry-component'
 
 import {
+  withRouter
+} from 'react-router-dom'
+
+import {
   LookListContainer,
+  EllipsisH4
 } from './LookListStyled'
 
 
@@ -27,7 +32,7 @@ class LookList extends Component {
         <Masonry 
           className={'my-gallery-class'} // default ''
           elementType={'main'} // default 'div'
-          options={{transitionDuration: 5, transitionProperty: 'width'}} // default {}
+          options={{transitionDuration: 2, transitionProperty: 'width'}} // default {}
           disableImagesLoaded={false} // default false
           updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
           // imagesLoadedOptions={imagesLoadedOptions} // default {}
@@ -35,9 +40,14 @@ class LookList extends Component {
 
         {
           picsData.map(value => (
-            <div key={value.match_id}>
+            <div key={value.match_id} onClick={() => 
+              {
+                this.props.history.push({pathname:"/detailed",state:{ data : value }})
+                
+              } 
+            }>
               <img src={value.normal_image} alt={value.match_id}/>
-              <h4>{value.case_title}</h4>
+              <EllipsisH4>{value.case_title}</EllipsisH4>
               <p>
                 <img src={value.user_pic} alt={value.user_name}/>
                 <span>{value.user_name}</span>
@@ -66,11 +76,13 @@ class LookList extends Component {
   }
 
   componentDidMount() {
-    new BScroll('#look_scroll')
+    new BScroll('#look_scroll',{
+      click: true
+    })
   }
-
-
 
 }
 
-export default LookList
+
+
+export default withRouter(LookList)
