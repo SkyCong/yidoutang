@@ -27,7 +27,6 @@ class Detailed extends Component {
   render() {
 
     let data = this.props.history.location.state.data;
-    console.log(data)
     let common = this.state.DetailData.common || []
     let commonUser = (this.state.DetailData.common && this.state.DetailData.common.user) || []
     let commentPreview = (this.state.DetailData.comment_preview && this.state.DetailData.comment_preview.comments) || []
@@ -104,7 +103,6 @@ class Detailed extends Component {
 
   async fetchData(id){
     let result = await http.get('/www/apiv4/album/detail?&match_id='+id)
-    console.log(result)
     if(result){
       this.setState({
         DetailData: result.data

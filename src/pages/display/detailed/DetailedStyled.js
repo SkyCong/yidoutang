@@ -96,8 +96,6 @@ const Main = Styled.div `
   }
 `
 
-
-
 const Footer = Styled.div `
   width: 100%;
   background: #fff;
@@ -125,13 +123,6 @@ const Scroll = Styled.div `
   height: 100%;
 
 `
-// const EllipsisH5 = ellipsis({
-//   component: Styled.h5 ``,
-//   lineClamp: 2
-// })
-
-
-
 
 export {
   Image,

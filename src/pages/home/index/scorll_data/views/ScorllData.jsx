@@ -8,6 +8,7 @@ import {
   EllipsisH4
 } from './ScorllDataStyled'
 
+
 const mapState = state => ({
   list: state.list.list
 })

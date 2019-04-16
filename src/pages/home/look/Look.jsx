@@ -50,7 +50,9 @@ class Look extends Component {
               tagData.slice(4,5).map(value => (
                 <span key={value.key}  
                 onClick={
-                  () => this.handleSwich(value.key,this.state.dis)  
+                  () => {this.handleSwich(value.key,this.state.dis)
+                    console.log(0)
+                  }  
                 }>
                   •••
                 </span>  
@@ -111,7 +113,7 @@ class Look extends Component {
         </Header>
 
 
-        <LookList></LookList> 
+        <LookList page = {''}></LookList> 
 
       </LookContainer>
     )
@@ -133,9 +135,6 @@ class Look extends Component {
       type,
       dis
     })
-
-    console.log(type)
-    console.log(dis)
   }
   
   handleBay(dis){

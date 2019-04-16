@@ -17,16 +17,19 @@ import {
 class LookList extends Component {
   constructor(props) {
     super(props)
-    this.fetchData()
     this.state = {
-      pics: []
-    }
+      pics: [],
+      space: "客厅",
+      page: 1
+    } 
+    // lookListScroll
+    this.fetchData()
   }
 
 
   render() {
     let picsData = this.state.pics || []
-
+    console.log(this.state.page)
     return (
       <LookListContainer id="look_scroll">
         <Masonry 
@@ -43,7 +46,6 @@ class LookList extends Component {
             <div key={value.match_id} onClick={() => 
               {
                 this.props.history.push({pathname:"/detailed",state:{ data : value }})
-                
               } 
             }>
               <img src={value.normal_image} alt={value.match_id}/>
@@ -62,27 +64,44 @@ class LookList extends Component {
     )
   }
 
-
-
-
-
   async fetchData(){
-    let result = await http.get('/api/lookData')
+
+    let result = await http.get(`/www/apiv3/case/album?space=${this.state.space}&page=${this.state.page}`)
     if(result){
       this.setState({
-        pics: result.data.pics
+        pics: [
+          ...this.state.pics,
+          ...result.data.pics
+        ]
       })
     }
   }
 
   componentDidMount() {
-    new BScroll('#look_scroll',{
+
+    let _this = this
+    let lookListScroll = new BScroll('#look_scroll',{
       click: true
+    })
+
+    lookListScroll.on('scrollEnd', function(){
+    
+      if (this.y <= this.maxScrollY) {
+        _this.setState({
+          page: _this.state.page +1
+        })
+        _this.fetchData()
+      }
+
+      this.refresh()
     })
   }
 
+  // componentWillUpdate(){
+  //   // console.log(this.props.pages)
+  //   // this.fetchData()
+  // }
+
 }
-
-
 
 export default withRouter(LookList)

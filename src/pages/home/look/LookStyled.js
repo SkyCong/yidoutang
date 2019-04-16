@@ -36,6 +36,9 @@ const Nav = Styled.header `
     &:last-child{
       color: #333333;
     }
+    &:hover{
+      color: #efc314;
+    }
   }
 
 `
@@ -84,6 +87,9 @@ const NavList = Styled.div `
           text-align: center;
           line-height: .28rem;
           border-radius: 4px;
+          &:hover{
+            background: #f3e88d;
+          }
         }
       }
     }  

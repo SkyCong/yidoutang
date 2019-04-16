@@ -32,7 +32,6 @@ export default class SearchData extends Component {
   render() {
     let hotData = this.state.hot || []
     let searchListData = this.state.searchList || []
-    console.log(this.state.bool)
     return (
       <>
         <Header>
