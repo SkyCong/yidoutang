@@ -1,37 +1,51 @@
 import React, { Component } from 'react'
 
 import http from 'utils/fetch'
+import BScroll from 'better-scroll'
+import Masonry from 'react-masonry-component'
+
+import {
+  withRouter
+} from 'react-router-dom'
 
 import {
   LookContainer,
   Header,
   Nav,
-  NavList
+  NavList,
+  LookList
 } from './LookStyled'
 
 import Search from 'components/search/Search'
-import LookList from './looks/LookList'
+import LookListUI from './looks/LookListUI'
 
 class Look extends Component {
   constructor(props) {
     super(props)
     this.fetchData()
-    this.fetchUpData()
+    
     this.state = {
       tags: [],
       groups: [],
       type: [],
+      pics: [],
       dis: false,
       val: "客厅",
-      page: 1
+      page: 1,
+      route: props.history
     }
+    
+    this.fetchUpData()
     this.handleSwich = this.handleSwich.bind(this)
-    this.handlePage = this.handlePage.bind(this)
 
   }
   render() {
-
+    console.log(this.state.route)
+    
     let tagData = this.state.tags  || []
+    // let picsData = this.state.pics  || []
+    
+
     return (
       <LookContainer>
         <Header>          
@@ -129,10 +143,45 @@ class Look extends Component {
         </Header>
 
 
-        <LookList val={this.state.val} page={this.state.page} pages={this.handlePage} bool={this.state.bool}></LookList> 
+        <LookList id="look_scroll">
+          <Masonry 
+            className={'my-gallery-class'} // default ''
+            elementType={'main'} // default 'div'
+            options={{transitionDuration: 2, transitionProperty: 'width'}} // default {}
+            disableImagesLoaded={false} // default false
+            updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+            // imagesLoadedOptions={imagesLoadedOptions} // default {}
+          >
+            <LookListUI {...this.state}/>
+          </Masonry>
+        </LookList>
+          
 
       </LookContainer>
     )
+  }
+
+
+
+  componentDidMount() {
+
+    let _this = this
+    let lookListScroll = new BScroll('#look_scroll',{
+      click: true
+    })
+
+    lookListScroll.on('scrollEnd', function(){
+      if (this.y <= this.maxScrollY) {
+        _this.setState({
+          page: _this.state.page + 1
+        })
+
+        _this.fetchUpData()
+
+      }
+      this.refresh()
+    })
+    
   }
 
   async fetchData(){
@@ -145,25 +194,18 @@ class Look extends Component {
   }
 
   async fetchUpData(){
-    let result = await http.get(`/www/apiv3/case/album?space=${this.props.val}&page=${this.props.page}`)
+    let result = await http.get(`/www/apiv3/case/album?space=${this.state.val}&page=${this.state.page}`)
       this.setState({
         pics: [
           ...this.state.pics,
           ...result.data.pics
         ]
       })
-    
-  }
-
-  handlePage(p){
-    this.setState({
-      page: p //把父组件中的parentText替换为子组件传递的值
-    })
+      // console.log(result)
   }
 
   handleSwich(type,dis) {
     dis = type === this.state.type ? !dis : true
-
     this.setState({
       type,
       dis
@@ -178,4 +220,4 @@ class Look extends Component {
   }
 }
 
-export default Look
+export default withRouter(Look)

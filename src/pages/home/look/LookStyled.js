@@ -118,26 +118,60 @@ const NavList = Styled.div `
   }
 `
 
-// display: ${ props => props.dis === true ? 'block' : 'none'};
-// position: relative;
-// height: 2rem;
-// width: 100%;
-// background: #f0f;
-// z-index: 101;
-// transition: all .2s linear
+const LookList = Styled.div `
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  main{
+    background: #fff;
+    padding: .14rem;
+    padding-top: 1.28rem;
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-between;
+    div{
+      width:46%;
+      background: #fff;
+      padding: 1%;
+      img{
+        width: 98%;
+        border-radius: 6px;
+      }
 
-// div{
-//   position: fixed;
-//   background: rgba(0,0,0,0.4) !important;
-//   width: 100vw;
-//   height: 100vh;
-//   z-index: 100;   
-// }
+      h4{
+        font-size: .1rem;
+        font-weight: normal;
+        color: #797979;
+        padding-top: .05rem;
+      }
+
+      p{
+        padding: .1rem 0;
+        overflow: hidden;
+        img{
+          border-radius: 50%;
+          width: .12rem;
+          height: .12rem;
+          float: left;
+        }
+        span{
+          font-size: .1rem;
+          color: #ccc;          
+          float: left;
+        }
+        i{
+          float: right;
+        }
+      }
+    }
+  }
+`
 
 export {
   LookContainer,
   Scorll,
   Header,
   Nav,
-  NavList
+  NavList,
+  LookList
 }
