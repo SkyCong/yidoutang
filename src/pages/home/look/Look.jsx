@@ -96,9 +96,14 @@ class Look extends Component {
                                     val : valuess.title,
                                     page : 1,
                                     bool : true,
-                                    dis : false
+                                    dis : false,
+                                    pics: []
                                   })
-                                }}
+              
+                                  this.fetchUpData()
+                                }
+                                
+                              }
                               >
                                 {valuess.value}
                               </li>                
@@ -175,9 +180,7 @@ class Look extends Component {
         _this.setState({
           page: _this.state.page + 1
         })
-
         _this.fetchUpData()
-
       }
       this.refresh()
     })
