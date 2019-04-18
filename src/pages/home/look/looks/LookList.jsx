@@ -19,8 +19,8 @@ class LookList extends Component {
     super(props)
     this.state = {
       pics: [],
-      space: "客厅",
-      page: 1
+      p: 1,
+      bool: true
     } 
     // lookListScroll
     this.fetchData()
@@ -29,7 +29,7 @@ class LookList extends Component {
 
   render() {
     let picsData = this.state.pics || []
-    console.log(this.state.page)
+    console.log(this.props)
     return (
       <LookListContainer id="look_scroll">
         <Masonry 
@@ -42,8 +42,8 @@ class LookList extends Component {
         >
 
         {
-          picsData.map(value => (
-            <div key={value.match_id} onClick={() => 
+          picsData.map((value , index )=> (
+            <div key={value.created+index} onClick={() => 
               {
                 this.props.history.push({pathname:"/detailed",state:{ data : value }})
               } 
@@ -65,16 +65,14 @@ class LookList extends Component {
   }
 
   async fetchData(){
-
-    let result = await http.get(`/www/apiv3/case/album?space=${this.state.space}&page=${this.state.page}`)
-    if(result){
+    let result = await http.get(`/www/apiv3/case/album?space=${this.props.val}&page=${this.props.page}`)
       this.setState({
         pics: [
           ...this.state.pics,
           ...result.data.pics
         ]
       })
-    }
+    
   }
 
   componentDidMount() {
@@ -88,19 +86,38 @@ class LookList extends Component {
     
       if (this.y <= this.maxScrollY) {
         _this.setState({
-          page: _this.state.page +1
+          p: _this.state.p + 1
+        },() => {
+          _this.props.pages(_this.state.p)
         })
-        _this.fetchData()
-      }
 
+        _this.fetchData()
+
+      }
       this.refresh()
     })
+    
   }
 
-  // componentWillUpdate(){
-  //   // console.log(this.props.pages)
-  //   // this.fetchData()
+  // shouldComponentUpdate(nextProps){ 
+  //   if(nextProps.val === this.props.val){
+  //     return false
+  //   }
   // }
+
+  // componentDidUpdate(){
+  //   // this.setState({
+  //   //   bool : this.props.bool
+  //   // })
+  //   if(this.props.page === 1 && this.props.val !== '客厅' ){
+  //     this.fetchData()
+  //     // this.setState({
+  //     //   bool : !this.state.bool
+  //     // })
+  //     console.log(this.state.bool)
+  //   }
+  // }
+  
 
 }
 

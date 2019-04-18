@@ -16,13 +16,18 @@ class Look extends Component {
   constructor(props) {
     super(props)
     this.fetchData()
+    this.fetchUpData()
     this.state = {
       tags: [],
       groups: [],
       type: [],
-      dis: false
+      dis: false,
+      val: "客厅",
+      page: 1
     }
     this.handleSwich = this.handleSwich.bind(this)
+    this.handlePage = this.handlePage.bind(this)
+
   }
   render() {
 
@@ -71,7 +76,18 @@ class Look extends Component {
                         <ul>
                           {
                             values.sonTags.map(valuess => (
-                              <li key={valuess.title}>{valuess.value}</li>                
+                              <li key={valuess.title} onClick={() => 
+                                {
+                                  this.setState({
+                                    val : valuess.title,
+                                    page : 1,
+                                    bool : true,
+                                    dis : false
+                                  })
+                                }}
+                              >
+                                {valuess.value}
+                              </li>                
                             ))
                           } 
                         </ul>
@@ -113,7 +129,7 @@ class Look extends Component {
         </Header>
 
 
-        <LookList page = {''}></LookList> 
+        <LookList val={this.state.val} page={this.state.page} pages={this.handlePage} bool={this.state.bool}></LookList> 
 
       </LookContainer>
     )
@@ -126,6 +142,23 @@ class Look extends Component {
         tags: result.data.tags
       })
     }
+  }
+
+  async fetchUpData(){
+    let result = await http.get(`/www/apiv3/case/album?space=${this.props.val}&page=${this.props.page}`)
+      this.setState({
+        pics: [
+          ...this.state.pics,
+          ...result.data.pics
+        ]
+      })
+    
+  }
+
+  handlePage(p){
+    this.setState({
+      page: p //把父组件中的parentText替换为子组件传递的值
+    })
   }
 
   handleSwich(type,dis) {
