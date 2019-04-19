@@ -35,7 +35,6 @@ class Search extends Component {
             value={this.state.InputValue}
             // defaultValue={this.state.InputValue} 
             onChange={(event) => {this.handleValue(event)}}
-            onClick={() => {console.log(0)}}
           />
           <svg 
             className={this.state.InputValue === '' ? 'hide' : 'show'}
@@ -54,7 +53,6 @@ class Search extends Component {
   }
 
   handleValue(event){
-    console.log(this.props.cdx)
     this.setState({
       InputValue : event.target.value
     })

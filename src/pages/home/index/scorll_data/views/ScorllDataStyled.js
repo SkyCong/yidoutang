@@ -17,7 +17,7 @@ const ScorllDataContainer = Styled.div `
 
     h4{
       font-size: .12rem;
-      padding: .12rem 0;
+      margin: .12rem 0;
     }
 
     p{
@@ -36,10 +36,12 @@ const ScorllDataContainer = Styled.div `
   }
 
 `
+
 const EllipsisH4 = ellipsis({
   component: Styled.h4 ``,
-  lineClamp: 1
+  lineClamp: 3
 })
+
 
 export {
   ScorllDataContainer,

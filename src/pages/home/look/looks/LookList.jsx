@@ -1,62 +1,71 @@
 import React, { Component } from 'react'
 
-import http from 'utils/fetch'
-import BScroll from 'better-scroll'
 
 import {
-  LookListContainer,
+  withRouter
+} from 'react-router-dom'
+
+import {
+  EllipsisH4
 } from './LookListStyled'
 
+// export default props => (
 
-class LookList extends Component {
+//   <>
+//     {
+//       props.pics.map((value , index )=> (
+//         <div key={value.created+index} onClick={() => 
+//           {
+//             this.props.history.push({pathname:"/detailed",state:{ data : value }})
+//           } 
+//         }>
+//           <img src={value.normal_image} alt={value.match_id}/>
+//           <EllipsisH4>{value.case_title}</EllipsisH4>
+//           <p>
+//             <img src={value.user_pic} alt={value.user_name}/>
+//             <span>{value.user_name}</span>
+//             {/* <i>☆</i> */}
+//           </p>
+//         </div>  
+//       ))  
+//     }
+//   </>
+// )
+
+class LookListUI extends Component{
   constructor(props) {
     super(props)
-    this.fetchData()
-    this.state = {
-      pics: []
-    }
+
   }
 
 
   render() {
-    let picsData = this.state.pics || []
+    
+    let picsData = this.props.data
+    // console.log(picsData)
 
     return (
-      <LookListContainer id="look_scroll">
-        <main >
-        {
-          picsData.map(value => (
-            <div key={value.match_id}>
-              <img src={value.normal_image} alt={value.match_id}/>
-              <h4>{value.case_title}</h4>
-              <p>
-                <img src={value.user_pic} alt={value.user_name}/>
-                <span>{value.user_name}</span>
-                {/* <i>☆</i> */}
-              </p>
-            </div>  
-          ))  
-        }
-        </main>
-      </LookListContainer>
+        <>
+          {
+            picsData.map((value , index )=> (
+              <div key={value.created+index} onClick={() => 
+                {
+                  this.props.history.push({pathname:"/detailed",state:{ data : value }})
+                } 
+              }>
+                <img src={value.normal_image} alt={value.match_id}/>
+                <EllipsisH4>{value.case_title}</EllipsisH4>
+                <p>
+                  <img src={value.user_pic} alt={value.user_name}/>
+                  <span>{value.user_name}</span>
+                  {/* <i>☆</i> */}
+                </p>
+              </div>  
+            ))  
+          }
+      </>
     )
   }
-
-  async fetchData(){
-    let result = await http.get('/api/lookData')
-    if(result){
-      this.setState({
-        pics: result.data.pics
-      })
-    }
-  }
-
-  componentDidMount() {
-    new BScroll('#look_scroll')
-  }
-
-
-
 }
 
-export default LookList
+export default withRouter(LookListUI)

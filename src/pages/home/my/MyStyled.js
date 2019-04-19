@@ -68,7 +68,7 @@ const MyNavContainer = Styled.div `
 const MyListContainer = Styled.div `
   background: #fff;
   ul{
-    padding-bottom: .13rem;
+    padding-bottom: .11rem;
     li{
       height: .42rem;
       line-height: .42rem;
