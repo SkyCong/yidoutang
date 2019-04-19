@@ -40,11 +40,8 @@ class Look extends Component {
 
   }
   render() {
-    console.log(this.state.route)
     
-    let tagData = this.state.tags  || []
-    // let picsData = this.state.pics  || []
-    
+    let tagData = this.state.tags  || []    
 
     return (
       <LookContainer>
@@ -98,9 +95,10 @@ class Look extends Component {
                                     bool : true,
                                     dis : false,
                                     pics: []
-                                  })
-              
-                                  this.fetchUpData()
+                                  }, function(){
+                                    this.fetchUpData()
+                                  }
+                                  )
                                 }
                                 
                               }

@@ -19,25 +19,22 @@ class ScorllData extends Component {
 
   constructor(props) {
     super(props)
-    this.fetchData()
     this.state = {
-      followData: []
+      followData: [],
+      findData: [],
+      page: 1
     }
+    this.fetchData()
   }
   
   render() {
-    let ScorllData = this.props.type === 'find' ?  this.props.list.recommend || [] : this.state.followData || []
-
+    let ScorllData = this.props.type !== 'find' ?  this.state.findData || [] : this.state.followData || []
+    console.log(this.state.followData)
     return (
       <ScorllDataContainer>
         {
           ScorllData.map(value => (
-            <div key={value.data}>
-              <p>
-                <img src={value.user_pic} alt={value.authorid}/>
-                <span>{value.author}</span>
-              </p>
-              <EllipsisH4>{value.title}</EllipsisH4>
+            <div key={value.title}>
               <img src={value.cover} alt={value.title}/>
             </div>  
           ))  
@@ -47,10 +44,12 @@ class ScorllData extends Component {
   }
 
   async fetchData(){
-    let result = await http.get('/api/followData')
+    let result = await http.get(`/www/apiv4/activity/tagzhuantilist?page=${this.state.page}`)
+    let result1 = await http.get(`/www/apiv4/activity/tagzhuantilist?page=${this.state.page}&tagname=%E7%A9%BA%E9%97%B4%E7%81%B5%E6%84%9F`)
     if(result){
       this.setState({
-        followData: result.data.follow_content
+        followData: result.data.list,
+        findData: result1.data.list
       })
     }
   }
