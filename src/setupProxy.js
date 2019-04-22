@@ -16,5 +16,12 @@ module.exports = function(app) {
         '^/www': ''
       }
     }),
+    proxy('/dd', { 
+      target: 'https://api.douban.com/',
+      changeOrigin: true,
+      pathRewrite: {
+        '^/dd': ''
+      }
+    }),
   )
 }

@@ -6,7 +6,15 @@ const HomeContainer = Styled.div `
 
 
 `
+const TabBar = Styled.div `
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+
+
+`
 
 export {
-  HomeContainer
+  HomeContainer,
+  TabBar
 }

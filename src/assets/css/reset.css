@@ -4,7 +4,13 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-  
+
+  .am-tabs-tab-bar-wrap{
+    position : fixed !important;
+    bottom : 0 !important;
+    z-index: 999 !important;
+    width: 100% !important;
+}
   .hide {
     display: none!important;
 }

@@ -23,7 +23,7 @@ class Look extends Component {
   constructor(props) {
     super(props)
     this.fetchData()
-    
+    // this.fetchData1()
     this.state = {
       tags: [],
       groups: [],
@@ -193,7 +193,11 @@ class Look extends Component {
       })
     }
   }
+  // async fetchData1(){
+  //   let result1 = await http.get('/dd/v2/movie/coming_soon?count=10&start=0')
+  //   console.log('00000'+result1)
 
+  // }
   async fetchUpData(){
     let result = await http.get(`/www/apiv3/case/album?space=${this.state.val}&page=${this.state.page}`)
       this.setState({
