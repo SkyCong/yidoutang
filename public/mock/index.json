@@ -2,83 +2,225 @@
   "data": {
     "have_news": true,
     "toast": "\u4e3a\u4f60\u63a8\u8350\u4e869\u6761\u65b0\u5185\u5bb9",
-    "banner": [
-      {
-      "banner_id": "605",
-      "position_id": "1",
-      "title": "征集-木质",
-      "image": "https://img.yidoutang.com/upload/bannel/5cb842d553160.jpg!banner720",
-      "type": "1",
-      "attr": "http://www.yidoutang.com/activity/phototopic/keyword/木质?source=appbanner",
-      "data_ext": {
-      "enable_save_image": true
-      },
-      "start": "1555635600",
-      "end": "1555808400",
-      "order": "1",
-      "created": "1535688685"
-      },
-      {
-      "banner_id": "589",
-      "position_id": "1",
-      "title": "话题253",
-      "image": "https://img.yidoutang.com/upload/bannel/5cb709c7a706c.jpg!banner720",
-      "type": "13",
-      "attr": "253",
-      "data_ext": {
-      "enable_save_image": true
-      },
-      "start": "1555549200",
-      "end": "1555740000",
-      "order": "2",
-      "created": "1526783938"
-      },
-      {
-      "banner_id": "637",
-      "position_id": "1",
-      "title": "五明",
-      "image": "https://img.yidoutang.com/upload/bannel/5cb5b88a50f24.jpg!banner720",
-      "type": "2",
-      "attr": "1790929",
-      "data_ext": {
-      "enable_save_image": true
-      },
-      "start": "1555430400",
-      "end": "1555689599",
-      "order": "4",
-      "created": "1548990533"
-      },
-      {
-      "banner_id": "643",
-      "position_id": "1",
-      "title": "招聘",
-      "image": "https://img.yidoutang.com/upload/bannel/5cb6ff628e9a8.jpg!banner720",
-      "type": "5",
-      "attr": "35831",
-      "data_ext": {
-      "enable_save_image": true
-      },
-      "start": "1555516800",
-      "end": "1555689599",
-      "order": "5",
-      "created": "1553163571"
-      },
-      {
-      "banner_id": "526",
-      "position_id": "1",
-      "title": "征集-琥珀黄",
-      "image": "https://img.yidoutang.com/upload/bannel/5bdd15a576973.jpeg!banner720",
-      "type": "1",
-      "attr": "http://www.yidoutang.com/activity/phototopic/keyword/新粉报到?source=appbanner",
-      "data_ext": {
-      "enable_save_image": true
-      },
-      "start": "1541215610",
-      "end": "1567481215",
-      "order": "7",
-      "created": "1503902731"
-      }
-      ],
+    "banner": [{
+			"banner_id": "585",
+			"position_id": "1",
+			"title": "\u5185\u5bb9\u805a\u5408\u9875-\u98d8\u7a97",
+			"image": "https:\/\/img.yidoutang.com\/upload\/bannel\/5cbd9b7672a3a.jpg!bannermid",
+			"type": "12",
+			"attr": "219",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"start": "1556035200",
+			"end": "1556294399",
+			"order": "0",
+			"created": "1523685365"
+		}, {
+			"banner_id": "605",
+			"position_id": "1",
+			"title": "\u5f81\u96c6-\u7d22\u83f2\u4e9a\u7384\u5173\u67dc",
+			"image": "https:\/\/img.yidoutang.com\/upload\/bannel\/5cbef7efacf20.jpg!bannermid",
+			"type": "9",
+			"attr": "{\"keyword\":\"\u7d22\u83f2\u4e9a\u7384\u5173\u67dc\"}",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"start": "1556067600",
+			"end": "1556240400",
+			"order": "0",
+			"created": "1535688685"
+		}, {
+			"banner_id": "644",
+			"position_id": "1",
+			"title": "\u8bdd\u9898256\u9910\u8fb9\u67dc",
+			"image": "https:\/\/img.yidoutang.com\/upload\/bannel\/5cbd8cc81bc8e.jpg!bannermid",
+			"type": "13",
+			"attr": "256",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"start": "1555981200",
+			"end": "1556154000",
+			"order": "1",
+			"created": "1554377195"
+		}, {
+			"banner_id": "578",
+			"position_id": "1",
+			"title": "\u5168\u5c4b\u8bb0-hi design",
+			"image": "https:\/\/img.yidoutang.com\/upload\/bannel\/5cb85ace0a17a.jpg!bannermid",
+			"type": "2",
+			"attr": "1797948",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"start": "1556068288",
+			"end": "1556121599",
+			"order": "2",
+			"created": "1517132014"
+		}, {
+			"banner_id": "579",
+			"position_id": "1",
+			"title": "\u8fbe\u4eba\u8bf4-\u7cd6\u4e3b",
+			"image": "https:\/\/img.yidoutang.com\/upload\/bannel\/5cae9e5a6735a.jpg!bannermid",
+			"type": "5",
+			"attr": "35886",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"start": "1556068360",
+			"end": "1556121599",
+			"order": "3",
+			"created": "1517605061"
+		}],
+		"nav": [{
+			"title": "\u5168\u5c4b\u8bb0",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5c0668ef0cc41.png!s95",
+			"type": "201",
+			"data": "",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "201",
+				"data": "",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u5bb6\u88c5\u7ecf\u9a8c",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5acb159832d3e.png!s95",
+			"type": "401",
+			"data": "{\"tagid\":\"915\"}",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "401",
+				"data": "{\"tagid\":\"915\"}",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u514d\u8d39\u4f17\u6d4b",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5acb159902c53.png!s95",
+			"type": "700",
+			"data": "https:\/\/m.yidoutang.com\/v4\/zhongce\/list?source=appicon",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "700",
+				"data": "https:\/\/m.yidoutang.com\/v4\/zhongce\/list?source=appicon",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u627e\u8bbe\u8ba1\u5e08",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5bc94e79e681f.png!s95",
+			"type": "642",
+			"data": "",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "642",
+				"data": ""
+			}
+		}, {
+			"title": "\u4e13\u9898",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5b42daeaa09fd.png!s95",
+			"type": "1301",
+			"data": "",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "1301",
+				"data": "",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u8bdd\u9898",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5acb15987c742.png!s95",
+			"type": "1401",
+			"data": "",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "1401",
+				"data": "",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u56fe\u7247\u5f81\u96c6",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5b42daea8e4ba.png!s95",
+			"type": "1201",
+			"data": "",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "1201",
+				"data": "",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u5c45\u4f4f\u6307\u5357",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5bfe736a72347.png!s95",
+			"type": "401",
+			"data": "{\"tagid\":\"916\"}",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "401",
+				"data": "{\"tagid\":\"916\"}",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u6d4b\u8bc4\u62a5\u544a",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5bade3150401f.png!s95",
+			"type": "401",
+			"data": "{\"tagid\":\"2208\"}",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "401",
+				"data": "{\"tagid\":\"2208\"}",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}, {
+			"title": "\u4e25\u9009\u597d\u7269",
+			"icon": "https:\/\/img.yidoutang.com\/upload\/community\/tag\/5bfe736ab49e0.png!s95",
+			"type": "2201",
+			"data": "{\"tagid\":\"2361\"}",
+			"data_ext": {
+				"enable_save_image": true
+			},
+			"jump": {
+				"type_id": "2201",
+				"data": "{\"tagid\":\"2361\"}",
+				"data_ext": {
+					"enable_save_image": true
+				}
+			}
+		}],
     "nav": [
       {
         "title": "\u5168\u5c4b\u8bb0",

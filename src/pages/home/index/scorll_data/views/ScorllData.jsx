@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 import http from 'utils/fetch'
 
 import {
-  ScorllDataContainer,
-  EllipsisH4
+  ScorllDataContainer
 } from './ScorllDataStyled'
 
 
@@ -29,7 +28,7 @@ class ScorllData extends Component {
   
   render() {
     let ScorllData = this.props.type !== 'find' ?  this.state.findData || [] : this.state.followData || []
-    console.log(this.state.followData)
+    // console.log(this.state.followData)
     return (
       <ScorllDataContainer>
         {

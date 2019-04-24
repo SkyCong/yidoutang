@@ -1,4 +1,5 @@
 import Styled from 'styled-components'
+import ellipsis from 'components/styled/ellipsis'
 
 
 const RenListContainer = Styled.div `
@@ -96,7 +97,8 @@ const ListCommand = Styled.div `
             color: #ffb000
           }       
           h5{
-            font-size: .16rem;             
+            font-size: .14rem;   
+            padding-bottom: .08rem;          
           }
           p{
             font-size: .11rem;
@@ -114,8 +116,20 @@ const ListCommand = Styled.div `
   }
 `
 
+const EllipsisH5 = ellipsis({
+  component: Styled.h5 ``,
+  lineClamp: 2
+})
+
+const EllipsisP = ellipsis({
+  component: Styled.p ``,
+  lineClamp: 3
+})
+
 
 export {
   RenListContainer,
-  ListCommand
+  ListCommand,
+  EllipsisH5,
+  EllipsisP
 }

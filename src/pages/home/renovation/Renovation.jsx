@@ -18,7 +18,6 @@ import {
 } from './RenoStyled'
 
 import Search from 'components/search/Search'
-import { Result } from 'antd-mobile';
 
 
 
@@ -62,8 +61,8 @@ class Renovation extends Component {
 
             <Process>
               {
-                processData.map((value,index) => (
-                  <div key={index}>
+                processData.map(value => (
+                  <div key={value.title}>
                     <h3>{value.title}</h3>
                     <ul>
                       {
@@ -74,7 +73,8 @@ class Renovation extends Component {
                               this.props.history.push({
                                 pathname:"/renlist",
                                 state:{ 
-                                  tagid : JSON.parse(values.jump.data).tagid,
+                                  type : values.jump.type_id,
+                                  data : JSON.parse(values.jump.data),
                                   title : values.title
                               }
                             })
@@ -140,7 +140,7 @@ class Renovation extends Component {
 
   async fetchData(){
     let result = await http.get('/api/reno')
-    console.log(result)
+    // console.log(result)
     if(result){
       this.setState({
         reno: result.data

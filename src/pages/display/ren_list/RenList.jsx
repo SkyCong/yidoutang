@@ -9,7 +9,9 @@ import {
 
 import {
   RenListContainer,
-  ListCommand
+  ListCommand,
+  EllipsisH5,
+  EllipsisP
 } from './RenListStyled'
 
 class RenList extends Component {
@@ -20,14 +22,12 @@ class RenList extends Component {
       renListData: [],
       page: 1
     } 
-
     this.fetchData()
   }
 
   render() {
-    console.log(this.props.history.location)
     let renListData = this.state.renListData || []
-    
+    console.log(renListData)
     return (
       <RenListContainer>
         <h1>
@@ -43,19 +43,19 @@ class RenList extends Component {
           <main id="renData_scroll"> 
             <ul>
               {
-                renListData.map(value => (                  
-                  <li key={value.tid}>
+                renListData.map((value,index) => (                  
+                  <li key={index}>
                     <h4>
                       <img src={value.user_pic} alt={value.user_id} />
-                      <span>{value.author}</span> 
-                      <span>{value.views}</span>  
+                      <span>{value.author || value.user_name}</span> 
+                      <span>{value.views || value.click_num}</span>  
                       <i>
                         <svg t="1554969879184" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4972"><path d="M512 209.403241c-201.731514 0-374.009206 125.476783-443.808922 302.596759 69.798692 177.119977 242.077408 302.596759 443.808922 302.596759 201.933105 0 374.010229-125.476783 443.808922-302.596759C886.009206 334.880023 713.933105 209.403241 512 209.403241zM512 713.731514c-111.355157 0-201.731514-90.375334-201.731514-201.731514s90.375334-201.731514 201.731514-201.731514 201.731514 90.375334 201.731514 201.731514S623.355157 713.731514 512 713.731514zM512 390.961296c-66.772776 0-121.038704 54.265928-121.038704 121.038704s54.265928 121.038704 121.038704 121.038704 121.038704-54.265928 121.038704-121.038704S578.772776 390.961296 512 390.961296z" p-id="4973" fill="#cacaca"></path></svg>
                       </i>         
                     </h4>
                     <div>
-                      <h5>{ value.title }</h5>
-                      <p>{ value.summary }</p>
+                      <EllipsisH5>{ value.subject || value.title}</EllipsisH5>
+                      <EllipsisP>{ value.summary }</EllipsisP>
                     </div>
                     <img src={value.header_image} alt={value.tid} />
                   </li>
@@ -76,14 +76,31 @@ class RenList extends Component {
 
 
   async fetchData(){
-    let result = await http.get(`/www/apiv4/guide/list?list_type=0&page=${this.state.page}&tagid=${this.props.history.location.state.tagid}`)
-    if(result){
-      this.setState({
-        renListData: result.data.guides
-      })
+    if(this.props.history.location.state.type === ('401' || '2201')){
+      console.log(this.props.history)
+      let result = await http.get(`/www/apiv4/guide/list?list_type=0&page=${this.state.page}&tagid=${this.props.history.location.state.data.tagid}`)
+      if(result){
+        this.setState({
+          renListData: result.data.guides
+        })
+      }
+    }
+    else if(this.props.history.location.state.type === '700'){
+      console.log(this.props.history.location.state.data)
+      window.location.href=this.props.history.location.state.data
+    }
+    else{
+      console.log('000'+this.props.history)
+
+      let result = await http.get(`/www/apiv3/case/list?&page=${this.state.page}`)
+      if(result){
+        this.setState({
+          renListData: result.data.cases
+        })
+      }
     }
   }
-  
+
 }
 
 export default withRouter(RenList)
