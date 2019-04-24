@@ -22,6 +22,9 @@ import {
   Route
 } from 'react-router-dom'
 
+// import {
+//   TabBar
+// } from './HomeStyled'
 
 class HomeList extends React.Component {
   constructor(props) {
@@ -41,6 +44,7 @@ class HomeList extends React.Component {
           tintColor="#000"
           barTintColor="white"
           hidden={this.state.hidden}
+          tabBarPosition='bottom'
         >
           <TabBar.Item
             title="首页"

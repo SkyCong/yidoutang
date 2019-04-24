@@ -62,7 +62,7 @@ const Header = Styled.header `
 const Scroll = Styled.div `
   height: 100%;
   main{
-    padding-top: .64rem;
+    padding: .64rem 0 .44rem;
   }
 `
 

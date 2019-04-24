@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 import BScroll from 'better-scroll'
 
 import {
+  withRouter
+} from 'react-router-dom'
+
+import {
   NavListContainer
 } from './NavListStyled'
 
@@ -17,11 +21,27 @@ class NavList extends Component {
     let navData = this.props.list.nav || []
 
     return (
-      <NavListContainer className="nav_scroll">
+      <NavListContainer className="nav_scroll" onClick={ () => {
+        
+      }}>
         <ul>
           {
             navData.map(value => (
-              <li key={value.title}>
+              <li key={value.title} onClick={
+                () => {
+                    this.props.history.push({
+                      pathname:"/renlist",
+                      state:{ 
+                        type : value.type,
+                        title : value.title,
+                        data : value.type === '700'
+                        ? value.jump.data : value.type === ('401' || '2201') 
+                        ? JSON.parse(value.jump.data) : '',
+                      }
+                    })
+                  }
+                }
+              > 
                 <img src={value.icon} alt={value.title}/>
                 {value.title}
               </li>
@@ -48,4 +68,4 @@ class NavList extends Component {
   
 }
 
-export default connect(mapState)(NavList)
+export default withRouter(connect(mapState)(NavList))
