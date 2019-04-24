@@ -8,6 +8,7 @@ import Home from 'pages/home/Home'
 import SearchData from 'pages/display/search/SearchData'
 import Detailed from 'pages/display/detailed/Detailed'
 import RenList from 'pages/display/ren_list/RenList'
+import IndexDet from 'pages/display/index_det/IndexDet'
 
 // import CS from 'pages/display/cs/CS'
 
@@ -30,6 +31,7 @@ export default class App extends Component {
             <Route path='/search' component={SearchData}/>
             <Route path='/detailed' component={Detailed}/>
             <Route path='/renlist' component={RenList}/>
+            <Route path='/indexdet' component={IndexDet}/>
             {/* <Route path='/cs' component={CS}/> */}
           </Switch>
         </Router>

@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 import http from 'utils/fetch'
 
 import {
+  withRouter
+} from 'react-router-dom'
+
+import {
   ScorllDataContainer
 } from './ScorllDataStyled'
 
@@ -33,7 +37,17 @@ class ScorllData extends Component {
       <ScorllDataContainer>
         {
           ScorllData.map(value => (
-            <div key={value.title}>
+            <div key={value.title} onClick={
+              () =>{
+                this.props.history.push({
+                  pathname:"/indexdet",
+                  state:{ 
+                    id : value.jump.data,
+                    title : value.title
+                  }
+                })
+              }
+            }>
               <img src={value.cover} alt={value.title}/>
             </div>  
           ))  
@@ -55,4 +69,4 @@ class ScorllData extends Component {
 
 }
 
-export default connect(mapState)(ScorllData)
+export default withRouter(connect(mapState)(ScorllData))

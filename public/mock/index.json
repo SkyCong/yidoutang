@@ -3,15 +3,15 @@
     "have_news": true,
     "toast": "\u4e3a\u4f60\u63a8\u8350\u4e869\u6761\u65b0\u5185\u5bb9",
     "banner": [{
-			"banner_id": "585",
-			"position_id": "1",
-			"title": "\u5185\u5bb9\u805a\u5408\u9875-\u98d8\u7a97",
-			"image": "https:\/\/img.yidoutang.com\/upload\/bannel\/5cbd9b7672a3a.jpg!bannermid",
-			"type": "12",
-			"attr": "219",
-			"data_ext": {
-				"enable_save_image": true
-			},
+      "banner_id": "605",
+      "position_id": "1",
+      "title": "征集-木质",
+      "image": "https://img.yidoutang.com/upload/bannel/5cb842d553160.jpg!banner720",
+      "type": "1",
+      "attr": "http://www.yidoutang.com/activity/phototopic/keyword/木质?source=appbanner",
+      "data_ext": {
+      "enable_save_image": true
+      },
 			"start": "1556035200",
 			"end": "1556294399",
 			"order": "0",
