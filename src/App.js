@@ -7,6 +7,8 @@ import { Provider } from 'react-redux'
 import Home from 'pages/home/Home'
 import SearchData from 'pages/display/search/SearchData'
 import Detailed from 'pages/display/detailed/Detailed'
+import RenList from 'pages/display/ren_list/RenList'
+
 // import CS from 'pages/display/cs/CS'
 
 import {
@@ -27,6 +29,7 @@ export default class App extends Component {
             <Route path='/home' component={Home}/>
             <Route path='/search' component={SearchData}/>
             <Route path='/detailed' component={Detailed}/>
+            <Route path='/renlist' component={RenList}/>
             {/* <Route path='/cs' component={CS}/> */}
           </Switch>
         </Router>

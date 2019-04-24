@@ -4,6 +4,10 @@ import http from 'utils/fetch'
 import BScroll from 'better-scroll'
 
 import {
+  withRouter
+} from 'react-router-dom'
+
+import {
   RenoContainer,
   Header,
   Scorll,
@@ -14,6 +18,7 @@ import {
 } from './RenoStyled'
 
 import Search from 'components/search/Search'
+import { Result } from 'antd-mobile';
 
 
 
@@ -63,7 +68,19 @@ class Renovation extends Component {
                     <ul>
                       {
                         value.sontags.map(values => (     
-                          <li key={values.title}>
+                          <li key={values.title} onClick={
+                            () => {
+                              // console.log(this.props)
+                              this.props.history.push({
+                                pathname:"/renlist",
+                                state:{ 
+                                  tagid : JSON.parse(values.jump.data).tagid,
+                                  title : values.title
+                              }
+                            })
+                              //JSON.parse(values.jump.data).tagid
+                            }
+                          }>
                             <img src={values.icon} alt={values.title}/>
                             <p>{values.title}</p>
                           </li>
@@ -123,6 +140,7 @@ class Renovation extends Component {
 
   async fetchData(){
     let result = await http.get('/api/reno')
+    console.log(result)
     if(result){
       this.setState({
         reno: result.data
@@ -139,10 +157,11 @@ class Renovation extends Component {
       eventPassthrough:'vertical'
     })
 
-    new BScroll('#reno_scorll')
+    new BScroll('#reno_scorll',{
+      click:true
+    })
   }
-
 
 }
 
-export default Renovation
+export default withRouter(Renovation)

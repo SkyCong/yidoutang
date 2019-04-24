@@ -17,7 +17,9 @@ class NavList extends Component {
     let navData = this.props.list.nav || []
 
     return (
-      <NavListContainer className="nav_scroll">
+      <NavListContainer className="nav_scroll" onClick={ () => {
+        
+      }}>
         <ul>
           {
             navData.map(value => (
