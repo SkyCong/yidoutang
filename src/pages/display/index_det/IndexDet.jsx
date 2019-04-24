@@ -9,9 +9,7 @@ import {
 
 import {
   IndexListContainer,
-  ListCommand,
-  EllipsisH5,
-  EllipsisP
+  ListCommand
 } from './IndexDetStyled'
 
 class IndexDet extends Component {
@@ -32,7 +30,7 @@ class IndexDet extends Component {
       <IndexListContainer>
         <h1>
           <i onClick={() => {
-            this.props.history.push("/home")
+            this.props.history.push("/home/indexfind")
           }}>                
             <svg t="1555208405146" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2067"><path d="M768 160.853333L691.2 85.333333l-358.826667 353.706667L256 514.133333l76.8 75.946667L686.933333 938.666667l75.946667-75.093334-353.706667-348.586666z" p-id="2068" fill="#ccc"></path></svg>
           </i>

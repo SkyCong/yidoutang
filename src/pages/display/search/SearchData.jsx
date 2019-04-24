@@ -158,4 +158,3 @@ export default class SearchData extends Component {
   }
   
 }
-// ('/www/apiv3/apiv4/search/pic?&page=1&q=qqq)

@@ -5,12 +5,16 @@ import { NavList } from './nav_list/'
 import { ScorllData } from './scorll_data/'
 
 export default class IndexFind extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
+    console.log(this.props)
     return (
       <> 
         <Swiper />
         <NavList />
-        <ScorllData type='find'/>
+        <ScorllData type='find' {...this.props}/>
       </>
     )
   }

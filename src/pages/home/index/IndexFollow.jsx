@@ -8,7 +8,7 @@ export default class Index extends Component {
     return (
       <>
         <ReCommend /> 
-        <ScorllData type='follow'/>
+        <ScorllData type='follow' {...this.props}/>
       </>
 
     )

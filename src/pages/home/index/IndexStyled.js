@@ -62,12 +62,16 @@ const Header = Styled.header `
 const Scroll = Styled.div `
   height: 100%;
   main{
-    padding: .64rem 0 .44rem;
+    padding: 1.1rem 0 .44rem;
   }
 `
 
 const TableList = Styled.header `
+  width: 100%;
   height: .44rem;
+  top: .64rem;
+  position: fixed;
+  z-index: 999;
   background: #ffffff;
   display: flex;
   justify-content: center;

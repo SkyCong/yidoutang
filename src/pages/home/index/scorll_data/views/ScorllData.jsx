@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import http from 'utils/fetch'
 
 import {
   withRouter
@@ -22,17 +21,16 @@ class ScorllData extends Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
       followData: [],
-      findData: [],
-      page: 1
+      findData: []
     }
-    this.fetchData()
   }
   
   render() {
-    let ScorllData = this.props.type !== 'find' ?  this.state.findData || [] : this.state.followData || []
-    // console.log(this.state.followData)
+    let ScorllData = this.props.type !== 'find' ?  this.props.findData || [] : this.props.followData || []
+    
     return (
       <ScorllDataContainer>
         {
@@ -54,17 +52,6 @@ class ScorllData extends Component {
         }
       </ScorllDataContainer>
     )
-  }
-
-  async fetchData(){
-    let result = await http.get(`/www/apiv4/activity/tagzhuantilist?page=${this.state.page}`)
-    let result1 = await http.get(`/www/apiv4/activity/tagzhuantilist?page=${this.state.page}&tagname=%E7%A9%BA%E9%97%B4%E7%81%B5%E6%84%9F`)
-    if(result){
-      this.setState({
-        followData: result.data.list,
-        findData: result1.data.list
-      })
-    }
   }
 
 }
