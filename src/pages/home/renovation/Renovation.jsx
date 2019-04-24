@@ -51,7 +51,11 @@ class Renovation extends Component {
             <Nav>
               {
                 navData.map(value => (
-                  <div key={value.title}>
+                  <div key={value.title} onClick={
+                    () => {
+                      window.location.href=value.data
+                    }
+                  }>
                     <img src={value.icon} alt={value.title}/>
                     <p>{value.title}</p>
                   </div>
@@ -122,7 +126,16 @@ class Renovation extends Component {
               <ul>
                 {
                   activitysData.map(value => (
-                    <li key={value.title}>
+                    <li key={value.title} onClick={
+                      () => {
+                        this.props.history.push({
+                          pathname:"/cs",
+                          state:{ 
+                            title : value.title
+                          }
+                        })
+                      }
+                    }>
                       <img src={value.cover} alt={value.title}/> 
                       <b>{value.title}</b>
                     </li>

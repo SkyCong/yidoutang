@@ -9,8 +9,7 @@ import SearchData from 'pages/display/search/SearchData'
 import Detailed from 'pages/display/detailed/Detailed'
 import RenList from 'pages/display/ren_list/RenList'
 import IndexDet from 'pages/display/index_det/IndexDet'
-
-// import CS from 'pages/display/cs/CS'
+import Cs from 'pages/display/cs/Cs'
 
 import {
   BrowserRouter as Router,
@@ -32,7 +31,7 @@ export default class App extends Component {
             <Route path='/detailed' component={Detailed}/>
             <Route path='/renlist' component={RenList}/>
             <Route path='/indexdet' component={IndexDet}/>
-            {/* <Route path='/cs' component={CS}/> */}
+            <Route path='/cs' component={Cs}/>
           </Switch>
         </Router>
 
