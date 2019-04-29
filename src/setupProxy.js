@@ -3,7 +3,7 @@ const proxy = require('http-proxy-middleware');
 module.exports = function(app) {
   app.use(
     proxy('/api', { 
-      target: 'http://localhost:9000/',
+      target: 'https://api.myjson.com/',
       changeOrigin: true,
       pathRewrite: {
         '^/api': ''
@@ -15,13 +15,6 @@ module.exports = function(app) {
       pathRewrite: {
         '^/www': ''
       }
-    }),
-    proxy('/dd', { 
-      target: 'https://api.douban.com/',
-      changeOrigin: true,
-      pathRewrite: {
-        '^/dd': ''
-      }
-    }),
+    })
   )
 }

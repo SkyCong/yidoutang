@@ -31,11 +31,14 @@ class Index extends Component {
       findData: []
     }
     this.handleSwitch = this.handleSwitch.bind(this)
+  }
+
+  componentWillMount(){
     this.fetchData()
   }
 
   render() {
-    console.log(this.state.page)
+    // console.log(this.state.page)
     return (
       <IndexContainer>
         <Header>          

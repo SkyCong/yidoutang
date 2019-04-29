@@ -22,8 +22,6 @@ import LookListUI from './looks/LookListUI'
 class Look extends Component {
   constructor(props) {
     super(props)
-    this.fetchData()
-    // this.fetchData1()
     this.state = {
       tags: [],
       groups: [],
@@ -35,12 +33,17 @@ class Look extends Component {
       route: props.history
     }
     
-    this.fetchUpData()
     this.handleSwich = this.handleSwich.bind(this)
 
   }
+
+  componentWillMount(){
+    this.fetchData()
+    this.fetchUpData()
+  }
+
+
   render() {
-    
     let tagData = this.state.tags  || []    
 
     return (
@@ -185,7 +188,7 @@ class Look extends Component {
   }
 
   async fetchData(){
-    let result = await http.get('/api/navList')
+    let result = await http.get('/www/apiv3/photo/activitetags')
     if(result){
       this.setState({
         tags: result.data.tags

@@ -22,17 +22,20 @@ class RenList extends Component {
       renListData: [],
       page: 1
     } 
+  }
+
+  componentWillMount(){
     this.fetchData()
   }
 
   render() {
     let renListData = this.state.renListData || []
-    console.log(renListData)
+    // console.log(renListData)
     return (
       <RenListContainer>
         <h1>
           <i onClick={() => {
-            this.props.history.push("/home")
+            this.props.history.push("/home/indexfind")
           }}>                
             <svg t="1555208405146" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2067"><path d="M768 160.853333L691.2 85.333333l-358.826667 353.706667L256 514.133333l76.8 75.946667L686.933333 938.666667l75.946667-75.093334-353.706667-348.586666z" p-id="2068" fill="#ccc"></path></svg>
           </i>
@@ -77,7 +80,7 @@ class RenList extends Component {
 
   async fetchData(){
     if(this.props.history.location.state.type === ('401' || '2201')){
-      console.log(this.props.history)
+      // console.log(this.props.history)
       let result = await http.get(`/www/apiv4/guide/list?list_type=0&page=${this.state.page}&tagid=${this.props.history.location.state.data.tagid}`)
       if(result){
         this.setState({
@@ -86,11 +89,11 @@ class RenList extends Component {
       }
     }
     else if(this.props.history.location.state.type === '700'){
-      console.log(this.props.history.location.state.data)
+      // console.log(this.props.history.location.state.data)
       window.location.href=this.props.history.location.state.data
     }
     else{
-      console.log('000'+this.props.history)
+      // console.log('000'+this.props.history)
 
       let result = await http.get(`/www/apiv3/case/list?&page=${this.state.page}`)
       if(result){

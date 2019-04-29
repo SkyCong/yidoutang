@@ -15,7 +15,6 @@ import {
 export default class SearchData extends Component {
   constructor(props) {
     super(props)
-    this.fetchData()
     this.state = {
       hot: [],
       searchList: [],
@@ -28,7 +27,11 @@ export default class SearchData extends Component {
     this.handleVal = this.handleVal.bind(this)
     this.handleDis = this.handleDis.bind(this)
   }
-  
+
+  componentWillMount(){
+    this.fetchData()
+  }
+
   render() {
     let hotData = this.state.hot || []
     let searchListData = this.state.searchList || []
@@ -43,7 +46,7 @@ export default class SearchData extends Component {
             cdx={this.state.cdx}
             passDis={this.handleDis}
           ></Search>
-          <i onClick={() =>{this.props.history.push('/home')}}>取消</i>
+          <i onClick={() =>{this.props.history.push('/home/indexfind')}}>取消</i>
         </Header>
         <SearchOn className={this.state.dis === true ? 'show' : 'hide'} >
           <Main>

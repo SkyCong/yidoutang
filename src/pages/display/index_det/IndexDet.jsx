@@ -19,13 +19,16 @@ class IndexDet extends Component {
     this.state = {
       indexListData: [],
     } 
+  }
+
+  componentWillMount(){
     this.fetchData()
   }
 
   render() {
     let indexListData = this.state.indexListData || []
-    console.log(this.props)
-    console.log(indexListData.description)
+    // console.log(this.props)
+    // console.log(indexListData.description)
     return (
       <IndexListContainer>
         <h1>

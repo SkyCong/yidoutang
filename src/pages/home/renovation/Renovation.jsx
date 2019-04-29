@@ -24,10 +24,13 @@ import Search from 'components/search/Search'
 class Renovation extends Component {
   constructor(props) {
     super(props)
-    this.fetchData()
     this.state = {
       reno: []
     }
+  }
+
+  componentWillMount(){
+    this.fetchData()
   }
 
   render() {
@@ -152,7 +155,7 @@ class Renovation extends Component {
   }
 
   async fetchData(){
-    let result = await http.get('/api/reno')
+    let result = await http.get('/www/apiv4/fitment')
     // console.log(result)
     if(result){
       this.setState({

@@ -9,6 +9,7 @@ const mapState = state => ({
 })
 
 class MyNav extends Component {
+
   render() {
     let navData = this.props.list.nav || []
 

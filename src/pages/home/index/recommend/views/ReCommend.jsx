@@ -26,8 +26,9 @@ const mapDispatch = dispatch => ({
 
 class ReCommend extends Component {
 
-  constructor(props) {
-    super(props)
+
+
+  componentWillMount(){
     this.fetchData()
   }
 

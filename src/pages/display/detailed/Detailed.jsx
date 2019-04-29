@@ -18,10 +18,13 @@ class Detailed extends Component {
 
   constructor(props) {
     super(props)
-    this.fetchData(props.history.location.state.data.match_id)
     this.state = {
       DetailData: []
     }
+  }
+
+  componentWillMount(){
+    this.fetchData(this.props.history.location.state.data.match_id)
   }
 
   render() {
@@ -38,7 +41,7 @@ class Detailed extends Component {
           <div>
             <Image>
               <img src={data.normal_image} alt={'sss'} />
-              <h1 onClick={() => {this.props.history.push("/home")}}>
+              <h1 onClick={() => {this.props.history.push("/home/indexfind")}}>
                 <svg t="1555208405146" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2067"><path d="M768 160.853333L691.2 85.333333l-358.826667 353.706667L256 514.133333l76.8 75.946667L686.933333 938.666667l75.946667-75.093334-353.706667-348.586666z" p-id="2068" fill="#ffffff"></path></svg>
                 <svg t="1555208492298" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2865"><path d="M102.4 409.6C46.08 409.6 0 455.68 0 512s46.08 102.4 102.4 102.4 102.4-46.08 102.4-102.4C204.8 455.68 158.72 409.6 102.4 409.6zM921.6 409.6c-56.32 0-102.4 46.08-102.4 102.4s46.08 102.4 102.4 102.4S1024 568.32 1024 512C1024 455.68 977.92 409.6 921.6 409.6zM512 409.6c-56.32 0-102.4 46.08-102.4 102.4s46.08 102.4 102.4 102.4 102.4-46.08 102.4-102.4C614.4 455.68 568.32 409.6 512 409.6z" p-id="2866" fill="#ffffff"></path></svg>
               </h1>
